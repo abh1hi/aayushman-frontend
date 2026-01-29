@@ -6,8 +6,8 @@
     <div class="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
       
       <!-- Left Content -->
-      <div class="space-y-6 text-center md:text-left pt-12 md:pt-0">
-        <h1 class="text-4xl md:text-6xl font-black tracking-widest leading-tight text-white/90">
+      <div class="space-y-6 text-center md:text-left pt-6 md:pt-0">
+        <h1 class="text-3xl md:text-6xl font-black tracking-widest leading-tight text-white/90">
           RACING TIME. <br/>
           <span class="text-white">DELIVERING CARE.</span>
         </h1>

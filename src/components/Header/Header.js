@@ -3,6 +3,11 @@ import { ref } from 'vue'
 export default {
     setup() {
         const activeDropdown = ref(null)
+        const isMobileMenuOpen = ref(false)
+
+        const toggleMobileMenu = () => {
+            isMobileMenuOpen.value = !isMobileMenuOpen.value
+        }
 
         const navItems = ref([
             { name: 'About us', link: '#' },
@@ -19,7 +24,9 @@ export default {
         return {
             navItems,
             activeDropdown,
-            toggleDropdown
+            toggleDropdown,
+            isMobileMenuOpen,
+            toggleMobileMenu
         }
     }
 }

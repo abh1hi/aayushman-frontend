@@ -28,13 +28,33 @@
         </div>
       </nav>
 
-      <!-- Emergency Call Action -->
-      <div class="liquid-button cursor-pointer">
+      <!-- Mobile Hamburger -->
+      <button @click="toggleMobileMenu" class="md:hidden text-white focus:outline-none z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path v-if="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Emergency Call Action (Desktop) -->
+      <div class="hidden md:block liquid-button cursor-pointer">
         <span class="text-red-600 font-bold tracking-widest text-sm glow-text uppercase">
           Emergency Call
         </span>
       </div>
 
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div v-if="isMobileMenuOpen" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 animate-fade-in md:hidden">
+       <a v-for="(item, index) in navItems" :key="index" :href="item.link" class="text-2xl font-bold text-gray-300 hover:text-white tracking-widest uppercase">
+          {{ item.name }}
+       </a>
+       <div class="liquid-button cursor-pointer mt-8">
+        <span class="text-red-600 font-bold tracking-widest text-sm glow-text uppercase">
+          Emergency Call
+        </span>
+      </div>
     </div>
   </header>
 </template>
