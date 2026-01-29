@@ -1,0 +1,55 @@
+.testimonial-section {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(250.39% 597.89% at 23.5% 50%, #000000 0%, rgba(76, 128, 70, 0.4) 100%);
+}
+
+.testimonial-track-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll-testimonials 60s linear infinite;
+    /* Slower than logos for readability */
+}
+
+.testimonial-track-container:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-testimonials {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Gradient Fade on Edges */
+.testimonial-section::before,
+.testimonial-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.testimonial-section::before {
+    left: 0;
+    background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+
+.testimonial-section::after {
+    right: 0;
+    background: linear-gradient(to left, #000 0%, transparent 100%);
+}

@@ -1,0 +1,34 @@
+.facilities-section {
+    background: radial-gradient(250.39% 597.89% at 23.5% 50%, #000000 0%, #902725 100%);
+}
+
+/* Custom list item styling */
+.facility-item {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.facility-item.active {
+    color: #ef4444;
+    /* Red-500 */
+}
+
+/* Gradient border for active item */
+.facility-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 60%;
+    /* Partial width border as per likely design style */
+    height: 2px;
+    background: linear-gradient(90deg, #b91c1c 0%, transparent 100%);
+}
+
+.facility-item:hover:not(.active) {
+    color: #d1d5db;
+    /* Gray-300 */
+    padding-left: 10px;
+}

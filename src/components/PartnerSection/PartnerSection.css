@@ -1,0 +1,68 @@
+.partner-section {
+    background: transparent;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+.partner-logo {
+    filter: grayscale(100%) brightness(0.8);
+    transition: all 0.3s ease;
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 40px;
+    /* Gap between logos */
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Add gradient fade on sides */
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    /* Allow clicks through */
+}
+
+.slider::before {
+    left: 0;
+    background: linear-gradient(to right, #0d0d0d 0%, transparent 100%);
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to left, #0d0d0d 0%, transparent 100%);
+}

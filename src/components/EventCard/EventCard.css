@@ -1,0 +1,66 @@
+.event-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    /* Liquid/Spring easing */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Subtle fluid gradient blob behind */
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(74, 222, 128, 0.1) 0%, transparent 60%);
+    opacity: 0;
+    transform: translate(0, 50%) scale(0.5);
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.event-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8);
+    border-color: rgba(74, 222, 128, 0.2);
+    /* Subtle green tint on border */
+}
+
+/* Liquid blob expansion on hover */
+.event-card:hover::before {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.2);
+}
+
+/* Ensure content stays on top of blob */
+.event-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.book-now-btn {
+    background-color: rgba(74, 222, 128, 0.2);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    color: #4ade80;
+    /* Green Text */
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.1);
+}
+
+.book-now-btn:hover {
+    background-color: #4ade80;
+    /* Fill on hover */
+    color: #000;
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+    transform: scale(1.05);
+    border-color: #4ade80;
+}

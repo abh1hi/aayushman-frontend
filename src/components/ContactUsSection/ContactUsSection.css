@@ -1,0 +1,47 @@
+.contact-us-section {
+    background: radial-gradient(250.39% 597.89% at 23.5% 50%, #000000 0%, #902725 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-card {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Faint border */
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.glass-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    /* Pill shape */
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #4ade80;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
+}
+
+.glass-textarea {
+    border-radius: 1.5rem;
+    /* Rounded rect for area */
+}
+
+.submit-btn {
+    background-color: #4ade80;
+    background: linear-gradient(90deg, #15803d 0%, #16a34a 100%);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(74, 222, 128, 0.4);
+}

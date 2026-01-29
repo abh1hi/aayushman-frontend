@@ -1,0 +1,77 @@
+.faq-section {
+    background-color: #000;
+}
+
+.faq-container {
+    background: rgba(20, 20, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    /* Subtle inner glow */
+    background-image: radial-gradient(circle at 0% 0%, rgba(74, 222, 128, 0.05) 0%, transparent 40%);
+}
+
+.call-btn {
+    background-color: #4ade80;
+    background: linear-gradient(90deg, #15803d 0%, #16a34a 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.call-btn:hover {
+    transform: scale(1.05) translateX(5px);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+}
+
+/* Accordion Item */
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    /* Glass pill */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    /* Pill shape initially */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+}
+
+.faq-item.is-active {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(74, 222, 128, 0.3);
+    border-radius: 1.5rem;
+    /* Expand radius for content */
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+    transition: color 0.3s;
+}
+
+.faq-item:hover .faq-question {
+    color: #4ade80;
+}
+
+.faq-icon {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.faq-item.is-active .faq-icon {
+    transform: rotate(180deg);
+    color: #4ade80;
+}
+
+/* Liquid Content Reveal */
+.faq-answer-wrapper {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.faq-item.is-active .faq-answer-wrapper {
+    max-height: 200px;
+    /* Arbitrary large enough height */
+    opacity: 1;
+    margin-top: 0.5rem;
+}

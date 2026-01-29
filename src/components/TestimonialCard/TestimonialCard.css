@@ -1,0 +1,19 @@
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    min-width: 350px;
+    max-width: 350px;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.stars {
+    color: #eab308;
+    /* Yellow-500 */
+}

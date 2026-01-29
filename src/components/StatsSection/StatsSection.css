@@ -1,0 +1,113 @@
+.stats-section {
+    background-color: #05100a;
+    overflow: hidden;
+    position: relative;
+    /* Deep Liquid Background Base */
+    background: radial-gradient(circle at 10% 50%, #063d1e 0%, #000000 80%);
+}
+
+/* Fluid Interior Blobs (Ambient) */
+.stats-section::before,
+.stats-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: liquid-drift 10s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+.stats-section::before {
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #0e8542 0%, transparent 70%);
+}
+
+.stats-section::after {
+    bottom: -20%;
+    left: 10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #0c5c36 0%, transparent 70%);
+    animation-delay: -5s;
+}
+
+@keyframes liquid-drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, 50px) scale(1.1);
+    }
+}
+
+/* Ensure content is above blobs */
+.stats-section>.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* The Animated SVG Line */
+.timeline-path {
+    fill: none;
+    stroke: #166534;
+    stroke-width: 4;
+    transition: all 0.1s linear;
+    filter: drop-shadow(0 0 5px rgba(22, 101, 52, 0.5));
+}
+
+.timeline-path-glow {
+    fill: none;
+    stroke: #4ade80;
+    stroke-width: 4;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 15px #4ade80);
+}
+
+/* Floating Elements (Liquid Glass) */
+.stat-pill {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Faint border */
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 255, 255, 0.02);
+    /* Inner depth */
+    transition: all 0.4s ease;
+}
+
+.stat-pill:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+/* Main Number Glow */
+.stat-number {
+    background: linear-gradient(180deg, #ffffff 0%, #4ade80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.3));
+}
+
+/* Icon Pulse */
+.icon-pulse {
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
+    animation: pulse-liquid 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse-liquid {
+    0% {
+        box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(74, 222, 128, 0);
+    }
+}

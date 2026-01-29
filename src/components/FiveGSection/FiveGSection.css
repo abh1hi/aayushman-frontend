@@ -1,0 +1,25 @@
+.five-g-section {
+    background-image: url('/5G-ambulance-section.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* Ensure text is readable over the busy image */
+}
+
+/* Gradient Overlay to darken the left side for text readability */
+.five-g-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 100%);
+}
+
+.book-btn {
+    background-color: #4ade80;
+    /* Green-400 */
+    background: linear-gradient(90deg, #15803d 0%, #16a34a 100%);
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}

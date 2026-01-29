@@ -1,0 +1,30 @@
+.our-services-section {
+    background: radial-gradient(250.39% 597.89% at 23.5% 50%, #000000 0%, #902725 100%);
+}
+
+.cta-card {
+    background-color: #b91c1c;
+    /* Dark Red */
+    border-radius: 1.5rem;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+    background-color: #991b1b;
+}
+
+/* Subtle pattern for CTA */
+.cta-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 20px);
+}
