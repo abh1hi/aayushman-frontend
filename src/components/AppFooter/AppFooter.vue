@@ -6,7 +6,7 @@
       <div class="flex items-center gap-3">
          <!-- Placeholder Logo -->
          <div class="flex flex-col items-center">
-            <img src="/alsalogo.png" alt="ALSA Logo" class="w-12 h-auto object-contain" />
+            <img src="/ALSA_LOGO.svg" alt="ALSA Logo" class="w-12 h-auto object-contain" />
          </div>
          <div class="text-left leading-tight">
             <h1 class="text-white font-bold text-sm tracking-wide">AYUSHMAN<br/>LIFE SUPPORT<br/>AMBULANCE</h1>

@@ -72,6 +72,35 @@ useHead({
     { name: 'description', content: computed(() => content.value.metaDesc) },
     { property: 'og:title', content: computed(() => content.value.title) },
     { property: 'og:description', content: computed(() => content.value.metaDesc) }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: computed(() => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: content.value.heading,
+        description: content.value.metaDesc,
+        provider: {
+          '@type': 'MedicalOrganization',
+          name: 'Ayushman Life Support Ambulance',
+          url: 'https://ayushman-ambulance.web.app',
+          logo: 'https://ayushman-ambulance.web.app/logo.png' 
+        },
+        serviceType: content.value.title,
+        areaServed: {
+          '@type': 'Country',
+          name: 'India'
+        },
+        offers: content.value.features.map(feature => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: feature
+          }
+        }))
+      }))
+    }
   ]
 })
 </script>

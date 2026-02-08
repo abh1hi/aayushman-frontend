@@ -1,10 +1,10 @@
 <template>
-  <section class="mts-section min-h-[80vh] flex items-center py-20 relative overflow-hidden" style="background-image: url('/morethanservice.webp');">
+  <section ref="sectionRef" class="mts-section min-h-[80vh] flex items-center py-20 relative overflow-hidden" style="background-image: url('/morethanservice.webp');">
     
     <div class="container mx-auto px-4 relative z-10 flex justify-end">
       
       <!-- Right Content Area (50% width on Desktop) -->
-      <div class="w-full md:w-1/2 space-y-8 pl-0 md:pl-12">
+      <div class="w-full md:w-1/2 space-y-8 pl-0 md:pl-12" :class="{ 'animate-slide-up': isVisible }">
         
         <div>
           <h2 class="text-2xl md:text-3xl font-bold text-gray-200 tracking-[0.2em] uppercase mb-4">

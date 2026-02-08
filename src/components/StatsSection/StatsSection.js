@@ -3,11 +3,11 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 export default {
     setup() {
         const sectionRef = ref(null)
-        const progress = ref(0)
-        const activeIndex = ref(0)
+        const progress = ref(0) // Timeline scroll progress
+        const countProgress = ref(0) // Number counting progress
 
+        // Milestones data...
         const milestones = [
-
             { date: '2005', label: 'Inception' },
             { date: '2010', label: 'Expansion' },
             { date: '2015', label: 'Coverage' },
@@ -17,16 +17,15 @@ export default {
 
         // Dynamic SVG Path for the "Bulge" effect
         const pathData = computed(() => {
-            const h = 600 // Fixed height of the SVG track
+            const h = 600
             const xBase = 50
-            const bulgeSize = 60 // Vertical spread of bulge
-            const bulgeDepth = 30 // Horizontal protrusion
+            const bulgeSize = 60
+            const bulgeDepth = 30
 
-            // Calculate current Y position based on progress (clamped)
-            // We want the bulge to move from top (10%) to bottom (90%)
+            // Calculate current Y position based on progress
             const currentY = Math.max(50, Math.min(h - 50, progress.value * h))
 
-            // Construct Path: Line down -> Curve Out -> Curve In -> Line down
+            // Construct Path
             return `M ${xBase} 0 
                     L ${xBase} ${currentY - bulgeSize} 
                     C ${xBase} ${currentY - bulgeSize * 0.5}, ${xBase + bulgeDepth} ${currentY - bulgeSize * 0.5}, ${xBase + bulgeDepth} ${currentY} 
@@ -44,29 +43,55 @@ export default {
             const rect = sectionRef.value.getBoundingClientRect()
             const winH = window.innerHeight
 
-            // Calculate progress: 0 when section enters, 1 when it leaves (or centered logic)
-            // Let's make it so the bulge travels down as the user scrolls through the section
-            const start = winH * 0.8
-            const end = winH * 0.2
-
+            // Scroll Logic for Timeline
             // Normalize scroll to 0-1 range relative to viewport crossing
-            // rect.top goes from winH to -height
             const totalTravel = winH + rect.height
             const currentPos = winH - rect.top
 
-            let p = currentPos / totalTravel * 1.5 - 0.2 // Tweaked for visual timing
+            let p = currentPos / totalTravel * 1.5 - 0.2
             p = Math.max(0, Math.min(1, p))
 
-            // Smooth lerp could be added, but direct mapping feels responsive
             progress.value = p
+        }
 
-            // Update active Stats based on P
-            // e.g., if p > 0.5 show "1M+" else "500k"
+        // Count Up Animation Logic
+        const startCounting = () => {
+            let start = 0
+            const duration = 2000
+            const startTime = performance.now()
+
+            const animate = (currentTime) => {
+                const elapsed = currentTime - startTime
+                const progress = Math.min(elapsed / duration, 1)
+
+                // Ease out cubic
+                const easeOut = 1 - Math.pow(1 - progress, 3)
+
+                countProgress.value = easeOut
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate)
+                }
+            }
+
+            requestAnimationFrame(animate)
         }
 
         onMounted(() => {
-            window.addEventListener('scroll', handleScroll)
-            handleScroll() // Init
+            window.addEventListener('scroll', handleScroll, { passive: true })
+            handleScroll() // Init timeline position
+
+            // Observer for counting animation
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    startCounting()
+                    observer.disconnect()
+                }
+            }, { threshold: 0.3 })
+
+            if (sectionRef.value) {
+                observer.observe(sectionRef.value)
+            }
         })
 
         onUnmounted(() => {
@@ -78,7 +103,8 @@ export default {
             pathData,
             activeY,
             milestones,
-            progress
+            progress,
+            countProgress
         }
     }
 }

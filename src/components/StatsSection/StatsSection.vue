@@ -47,6 +47,7 @@
               <img src="https://placehold.co/40x40/444/FFF?text=U2" class="w-8 h-8 rounded-full border border-gray-700" />
               <img src="https://placehold.co/40x40/555/FFF?text=U3" class="w-8 h-8 rounded-full border border-gray-700" />
            </div>
+
            <span class="text-xs md:text-sm text-gray-300">5,00,000+ patients supported in critical moments</span>
         </div>
 
@@ -63,9 +64,9 @@
               </div>
               
               <!-- Giant Number -->
-              <div>
+              <div class="animate-fade-in-up">
                  <h2 class="stat-number text-6xl md:text-8xl font-bold text-white tracking-tighter">
-                   {{ Math.floor(500000 * Math.min(1, progress + 0.2)).toLocaleString() }}+
+                   {{ Math.floor(500000 * countProgress).toLocaleString() }}+
                  </h2>
                  <p class="text-gray-400 text-sm uppercase tracking-[0.2em] mt-2">Lives Saved</p>
               </div>
