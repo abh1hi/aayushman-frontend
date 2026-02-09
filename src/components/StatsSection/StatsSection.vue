@@ -64,7 +64,7 @@
                        A reflection of expanding access to emergency and medical services.
                   </p>
                   <h2 class="text-4xl font-bold text-white tracking-tighter">
-                    5,00,000+
+                    {{ Math.floor(500000 * progress).toLocaleString() }}+
                   </h2>
                   <p class="text-gray-400 text-sm uppercase tracking-widest mt-1">Lives Saved</p>
               </div>
