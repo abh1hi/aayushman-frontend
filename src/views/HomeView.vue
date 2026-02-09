@@ -90,7 +90,7 @@ useHead({
 </script>
 
 <template>
-  <main class="text-white min-h-screen">
+  <main class="text-white min-h-screen flex flex-col">
     <HeroSection />
     <MoreThanServiceSection />
     <PartnerSection />

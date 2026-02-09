@@ -30,7 +30,7 @@ onUnmounted(() => {
 /* Global resets if needed */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
   background-color: #111827;
 }
 </style>

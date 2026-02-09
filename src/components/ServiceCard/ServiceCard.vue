@@ -1,9 +1,9 @@
 <template>
   <div class="service-card w-full group hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden relative h-[400px]">
-    <!-- Background Image -->
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-         :style="{ backgroundImage: `url(${image})` }">
-    </div>
+    <!-- Background Image (SEO Optimized) -->
+    <img :src="image" 
+         :alt="title + ' - Ayushman Life Support Ambulance'"
+         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
     <!-- Content Overlay (Top Gradient) -->
     <div class="card-overlay absolute inset-0 p-8 flex flex-col items-start justify-end text-left pointer-events-none bg-gradient-to-t from-black via-transparent to-transparent group-hover:-translate-y-2 transition-transform duration-300">

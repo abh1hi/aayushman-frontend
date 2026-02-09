@@ -7,7 +7,7 @@
         <a href="/" class="flex items-center gap-3">
           <img src="/ALSA_LOGO.svg" alt="Ayushman Life Support Ambulance" class="h-12 w-auto object-contain" />
           <div class="text-left leading-tight hidden md:block">
-             <h1 class="text-white font-bold text-[0.65rem] tracking-wide">AYUSHMAN<br/>LIFE SUPPORT<br/>AMBULANCE</h1>
+             <h1 class="text-white font-bold text-[0.65rem] tracking-wide">AYUSHMAN<br/>LIFE SUPPORT<br/>AMBULANCE®</h1>
           </div>
         </a>
       </div>

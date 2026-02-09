@@ -8,27 +8,27 @@ export default {
             {
                 title: 'Road Ambulance',
                 description: 'Fully equipped ambulances with trained medical staff, ready to respond when every minute matters.',
-                image: 'https://placehold.co/600x800/222/FFF?text=Road+Ambulance'
+                image: '/third-section/road-ambulance.jpg'
             },
             {
                 title: 'Air Ambulance',
                 description: 'Seamless road to air medical transfers with critical care teams and advanced support.',
-                image: 'https://placehold.co/600x800/333/FFF?text=Air+Ambulance'
+                image: '/third-section/air-ambulance.jpg'
             },
             {
                 title: 'Rail Ambulance',
                 description: 'Long-distance medical transfers with onboard care, monitoring, and trained medical support.',
-                image: 'https://placehold.co/600x800/444/FFF?text=Rail+Ambulance'
+                image: '/third-section/rail-ambulance.jpg'
             },
             {
                 title: 'Mortuary Transfer',
                 description: 'Safe and respectful transfers, with trained personnel guiding every moment.',
-                image: 'https://placehold.co/600x800/555/FFF?text=Mortuary+Van'
+                image: '/third-section/morturary-van.jpg'
             },
             {
                 title: 'VIP Transfers',
                 description: 'Personalized medical assistance designed for smooth, comfortable patient transfers.',
-                image: 'https://placehold.co/600x800/666/FFF?text=VIP+Transport'
+                image: '/third-section/vip-transfer.jpg'
             }
         ])
 

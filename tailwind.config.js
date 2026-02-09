@@ -12,8 +12,10 @@ export default {
         dark: '#111827', // Dark background
       },
       fontFamily: {
-        sans: ['Balthazar', 'serif'], // Override default sans font
-        serif: ['Balthazar', 'serif'],
+        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['ui-serif', 'Georgia', 'serif'],
+        heading: ['Copperplate', 'serif'],
+        copperplate: ['Copperplate', 'serif'],
       }
     },
   },

@@ -1,93 +1,212 @@
 <template>
-  <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden text-white pt-24 pb-12">
-    <!-- Background overlay/effects -->
-    <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center animate-scale-in" style="background-image: url('/Hero_page_gif.webp');"></div>
-
-    <div class="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
-      
-      <!-- Left Content -->
-      <div class="space-y-6 text-center md:text-left pt-12 md:pt-0">
-        <h1 class="text-4xl md:text-6xl font-black tracking-widest leading-tight text-white/90 animate-slide-up">
-          RACING TIME. <br/>
-          <span class="text-white">DELIVERING CARE.</span>
-        </h1>
+  <section class="hero-section relative w-full overflow-hidden text-white">
+    
+    <!-- ========================================== -->
+    <!--          MOBILE VIEW (md:hidden)           -->
+    <!-- ========================================== -->
+    <div class="md:hidden relative min-h-screen flex flex-col pt-24 pb-8 bg-[#0B1215]">
+      <!-- Mobile Background: Dark Map Theme -->
+      <!-- Using a dark gradient/map placeholder for now. 
+           In a real scenario, this would be a map image. -->
+      <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" 
+           style="background-image: url('/Hero_page_gif.webp'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
       </div>
-
-      <!-- Right Form: Get Quick Ambulance Cost -->
-      <div class="glass-card p-6 md:p-8 rounded-[2rem] w-full max-w-md mx-auto relative animate-fade-in-up">
-        <!-- 24/7 Badge -->
-        <div class="absolute -top-4 left-8 bg-white text-gray-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
-           <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-           24/7 Available
+      
+      <!-- Content Container -->
+      <div class="container mx-auto px-4 z-10 flex-1 flex flex-col justify-center items-center gap-6">
+        
+        <!-- 24/7 Badge (Mobile Position - Centered or Top) -->
+        <div class="flex items-center gap-2 mb-2">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+            </span>
+            <span class="text-gray-200 text-sm font-bold tracking-wide">24/7 Available</span>
         </div>
 
-        <h3 class="text-xl md:text-2xl font-black mb-6 uppercase tracking-wide leading-tight mt-2">
-          Get Quick Ambulance <br/>
-          <span class="text-gray-300">Cost Instantly...</span>
-        </h3>
-        
-        <form @submit.prevent="handleEstimate" class="space-y-4">
-          
-          <!-- Pickup -->
-          <div class="input-pill flex items-center px-4 py-3 rounded-full">
-            <input v-model="pickup" type="text" placeholder="Enter Pickup Address or area" 
-              class="input-field w-full outline-none text-sm placeholder-gray-400 bg-transparent py-1" />
-            <span class="text-green-500 cursor-pointer">➔</span>
-          </div>
-          
-          <!-- Destination -->
-          <div class="input-pill flex items-center px-4 py-3 rounded-full">
-            <input v-model="destination" type="text" placeholder="Enter Destination" 
-              class="input-field w-full outline-none text-sm placeholder-gray-400 bg-transparent py-1" />
-            <span class="text-green-500 cursor-pointer">➔</span>
-          </div>
+        <!-- Form Card (Mobile) -->
+        <div class="bg-[#1A2320] border border-white/10 p-5 rounded-[2rem] w-full max-w-[340px] shadow-2xl backdrop-blur-md relative overflow-hidden animate-fade-in-up">
+            <!-- Green glow effect -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
-          <!-- Mobile Number -->
-          <div class="input-pill flex items-center px-4 py-3 rounded-full">
-            <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
-              class="input-field w-full outline-none text-sm placeholder-gray-400 bg-transparent py-1" />
-            <span class="text-green-500">📞</span>
-          </div>
+            <h3 class="text-xl font-black mb-6 uppercase tracking-wide leading-tight text-white text-center">
+              Get Quick Ambulance <br/>
+              <span class="text-gray-400">Cost Instantly...</span>
+            </h3>
 
-          <!-- Ambulance Type -->
-          <div class="input-pill px-4 py-3 rounded-full">
-             <select v-model="ambulanceType" class="input-field w-full outline-none text-sm bg-transparent custom-select cursor-pointer text-gray-300">
-                <option value="" disabled selected>Ambulance Type</option>
-                <option v-for="type in ambulanceTypes" :key="type" :value="type" class="text-black">{{ type }}</option>
-             </select>
-          </div>
-          
-          <!-- Action Buttons -->
-          <div class="flex gap-3 pt-2">
-            <button type="submit" :disabled="loading"
-              class="flex-1 btn-green text-white font-bold py-3 pr-6 pl-2 rounded-full shadow-lg transition flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed border border-green-600/50">
-              <div class="w-10 h-10 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0">
-                <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-5 h-5 object-contain" />
+            <form @submit.prevent="handleEstimate" class="space-y-4">
+              <!-- Pickup -->
+              <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
+                <input v-model="pickup" type="text" placeholder="Enter Pickup Address or area" 
+                  class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
+                <span class="text-green-500 ml-2">
+                   <!-- Location Icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </span>
               </div>
-              <span class="whitespace-nowrap">{{ loading ? 'Sending...' : 'See Estimated Fare' }}</span>
-            </button>
-            
-            <button type="button" @click="handleReset"
-              class="px-6 py-3 rounded-full border border-gray-600 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 font-semibold transition flex items-center gap-2">
-              Reset <span class="text-green-500 text-lg">↻</span>
-            </button>
-          </div>
 
-          <!-- Note -->
-          <p class="text-[10px] text-gray-400 leading-relaxed mt-2">
-            <strong class="text-gray-300">Note:</strong> This is an estimated fare as per your requirements. For exact pricing, Call us at <a href="tel:8802020245" class="text-blue-400 hover:underline">88 02 02 02 45</a>.
-          </p>
+              <!-- Destination -->
+              <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
+                <input v-model="destination" type="text" placeholder="Enter Destination" 
+                  class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
+                <span class="text-green-500 ml-2">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </span>
+              </div>
 
-          <!-- Call Us Button -->
-          <div class="pt-2">
-             <button type="button" @click="handleCall" class="bg-[#C81E1E] hover:bg-[#A01818] text-white font-bold px-10 py-3 rounded-full shadow-lg transition-transform hover:-translate-y-1">
-               Call Us
-             </button>
-          </div>
+               <!-- Mobile Number -->
+              <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
+                <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
+                  class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
+                <span class="text-green-500 ml-2 text-sm">📞</span>
+              </div>
 
-        </form>
+               <!-- Ambulance Type -->
+              <div class="bg-white/5 border border-white/10 px-4 h-[50px] flex items-center rounded-full relative">
+                <select v-model="ambulanceType" class="w-full outline-none text-xs bg-transparent border-none text-gray-400 appearance-none cursor-pointer">
+                    <option value="" disabled selected>Ambulance Type</option>
+                    <option v-for="type in ambulanceTypes" :key="type" :value="type" class="text-black">{{ type }}</option>
+                </select>
+                <div class="pointer-events-none absolute right-4 flex items-center text-gray-500">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </div>
+              </div>
+
+              <!-- Buttons Row -->
+              <div class="flex gap-3 pt-2">
+                <button type="submit" :disabled="loading"
+                  class="flex-1 bg-[#4DA959] hover:bg-[#3d8b46] text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 disabled:opacity-70 group">
+                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center group-hover:bg-[#254233] transition-colors">
+                     <!-- Arrow Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </div>
+                  <span class="text-xs flex-1 text-center pr-2">See Estimated Fare</span>
+                </button>
+                
+                <button type="button" @click="handleReset"
+                  class="w-[90px] h-[48px] rounded-full border border-gray-600 bg-transparent hover:bg-white/5 text-gray-300 font-semibold transition flex items-center justify-center gap-2">
+                  <span class="text-xs">Reset</span> 
+                  <span class="text-green-500 text-xs">↻</span>
+                </button>
+              </div>
+
+               <!-- Note -->
+              <p class="text-[10px] text-center text-gray-500 mt-3 leading-tight px-1">
+                <span class="text-gray-400 font-bold">Note:</span> This is an estimated fare as per your requirements. For exact pricing, Call us at <a href="tel:8802020245" class="text-blue-400">88 02 02 02 45</a>.
+              </p>
+
+               <!-- Call Us Button -->
+              <button type="button" @click="handleCall" 
+                class="w-full bg-[#C81E1E] hover:bg-[#A01818] text-white font-bold h-[48px] rounded-full shadow-lg transition-transform hover:-translate-y-0.5 flex items-center justify-center mt-2 text-sm">
+                 Call Us
+              </button>
+            </form>
+        </div>
+        
+        <!-- Bottom Text (Mobile) -->
+        <div class="text-center mt-auto pb-4 pt-4">
+             <h1 class="text-xl font-black tracking-[0.2em] leading-tight text-white/50">
+              RACING TIME.<br/>
+              <span class="text-white">DELIVERING CARE.</span>
+            </h1>
+        </div>
+
       </div>
+    </div>
 
+
+    <!-- ========================================== -->
+    <!--          DESKTOP VIEW (hidden md:block)    -->
+    <!-- ========================================== -->
+    <div class="hidden md:flex relative min-h-screen items-center justify-center pt-24 pb-12">
+        <!-- Background overlay/effects -->
+        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center animate-scale-in" style="background-image: url('/Hero_page_gif.webp');"></div>
+    
+        <div class="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
+          
+          <!-- Left Content -->
+          <div class="space-y-6 text-center md:text-left pt-12 md:pt-0">
+            <h1 class="text-4xl md:text-6xl font-black tracking-widest leading-tight text-white/90 animate-slide-up">
+              RACING TIME. <br/>
+              <span class="text-white">DELIVERING CARE.</span>
+            </h1>
+          </div>
+    
+          <!-- Right Form: Get Quick Ambulance Cost -->
+          <div class="glass-card p-5 md:p-6 rounded-[2rem] w-full max-w-[360px] mx-auto relative animate-fade-in-up">
+            <!-- 24/7 Badge -->
+            <div class="absolute -top-4 left-8 bg-white text-gray-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
+               <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+               24/7 Available
+            </div>
+    
+            <h3 class="text-xl md:text-2xl font-black mb-5 uppercase tracking-wide leading-tight mt-2">
+              Get Quick Ambulance <br/>
+              <span class="text-gray-300">Cost Instantly...</span>
+            </h3>
+            
+            <form @submit.prevent="handleEstimate" class="space-y-3">
+              
+              <!-- Pickup -->
+              <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
+                <input v-model="pickup" type="text" placeholder="Enter Pickup Address or area" 
+                  class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
+                <span class="text-green-500 cursor-pointer text-sm">➔</span>
+              </div>
+              
+              <!-- Destination -->
+              <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
+                <input v-model="destination" type="text" placeholder="Enter Destination" 
+                  class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
+                <span class="text-green-500 cursor-pointer text-sm">➔</span>
+              </div>
+    
+              <!-- Mobile Number -->
+              <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
+                <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
+                  class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
+                <span class="text-green-500 text-sm">📞</span>
+              </div>
+    
+              <!-- Ambulance Type -->
+              <div class="input-pill px-4 h-[48px] flex items-center rounded-full">
+                 <select v-model="ambulanceType" class="input-field w-full outline-none text-xs bg-transparent custom-select cursor-pointer text-gray-300">
+                    <option value="" disabled selected>Ambulance Type</option>
+                    <option v-for="type in ambulanceTypes" :key="type" :value="type" class="text-black">{{ type }}</option>
+                 </select>
+              </div>
+              
+              <!-- Action Buttons -->
+              <div class="flex gap-2 pt-2">
+                <button type="submit" :disabled="loading"
+                  class="w-[65%] btn-green text-white font-bold h-[48px] pr-2 pl-2 rounded-full shadow-lg transition flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed border border-green-600/50">
+                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0">
+                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain" />
+                  </div>
+                  <span class="whitespace-nowrap text-sm flex-1 text-center">See Estimated Fare</span>
+                </button>
+                
+                <button type="button" @click="handleReset"
+                  class="flex-1 h-[48px] rounded-full border border-gray-600 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 font-semibold transition flex items-center justify-center gap-2 px-2">
+                  <span class="text-sm">Reset</span> <span class="text-green-500 text-sm">↻</span>
+                </button>
+              </div>
+    
+              <!-- Note -->
+              <p class="text-[12px] text-gray-400 leading-relaxed mt-1">
+                <strong class="text-gray-300">Note:</strong> This is an estimated fare as per your requirements. For exact pricing, Call us at <a href="tel:8802020245" class="text-blue-400 hover:underline">88 02 02 02 45</a>.
+              </p>
+    
+              <!-- Call Us Button -->
+              <div class="pt-1 flex justify-start">
+                 <button type="button" @click="handleCall" class="bg-[#C81E1E] hover:bg-[#A01818] text-white font-bold px-6 h-[48px] rounded-full shadow-lg transition-transform hover:-translate-y-1 flex items-center justify-center text-sm">
+                   Call Us
+                 </button>
+              </div>
+    
+            </form>
+          </div>
+        </div>
     </div>
   </section>
 </template>

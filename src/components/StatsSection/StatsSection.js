@@ -6,7 +6,7 @@ export default {
         const progress = ref(0) // Timeline scroll progress
         const countProgress = ref(0) // Number counting progress
 
-        // Milestones data...
+        // Milestones data
         const milestones = [
             { date: '2005', label: 'Inception' },
             { date: '2010', label: 'Expansion' },
@@ -15,8 +15,8 @@ export default {
             { date: '2025', label: 'Target' },
         ]
 
-        // Dynamic SVG Path for the "Bulge" effect
-        const pathData = computed(() => {
+        // --- DESKTOP LOGIC (height = 600) ---
+        const pathDataDesktop = computed(() => {
             const h = 600
             const xBase = 50
             const bulgeSize = 60
@@ -33,10 +33,36 @@ export default {
                     L ${xBase} ${h}`
         })
 
-        const activeY = computed(() => {
+        const activeYDesktop = computed(() => {
+            // Constrain desktop active knob movement
             return Math.max(50, Math.min(600 - 50, progress.value * 600))
         })
 
+        // --- MOBILE LOGIC (height = 500) ---
+        const pathDataMobile = computed(() => {
+            const h = 500
+            const xBase = 50
+            const bulgeSize = 60
+            const bulgeDepth = 30
+
+            // Calculate current Y position based on progress
+            const currentY = Math.max(50, Math.min(h - 50, progress.value * h))
+
+            // Construct Path
+            return `M ${xBase} 0 
+                    L ${xBase} ${currentY - bulgeSize} 
+                    C ${xBase} ${currentY - bulgeSize * 0.5}, ${xBase + bulgeDepth} ${currentY - bulgeSize * 0.5}, ${xBase + bulgeDepth} ${currentY} 
+                    C ${xBase + bulgeDepth} ${currentY + bulgeSize * 0.5}, ${xBase} ${currentY + bulgeSize * 0.5}, ${xBase} ${currentY + bulgeSize} 
+                    L ${xBase} ${h}`
+        })
+
+        const activeYMobile = computed(() => {
+            // Constrain mobile active knob movement
+            return Math.max(50, Math.min(500 - 50, progress.value * 500))
+        })
+
+
+        // --- SCROLL HANDLING ---
         const handleScroll = () => {
             if (!sectionRef.value) return
 
@@ -44,17 +70,27 @@ export default {
             const winH = window.innerHeight
 
             // Scroll Logic for Timeline
-            // Normalize scroll to 0-1 range relative to viewport crossing
+            // Determine how far the section has travelled through the viewport
+            // 0 = section top just enters viewport bottom
+            // 1 = section bottom just leaves viewport top? Or section center passes middle?
+            // Let's refine for a nice reveal:
+
             const totalTravel = winH + rect.height
             const currentPos = winH - rect.top
 
-            let p = currentPos / totalTravel * 1.5 - 0.2
+            // Normalize: 0 to 1
+            let p = currentPos / totalTravel
+
+            // Adjust range to make the animation span a bit wider or centered better
+            // e.g., multiply by 1.5 and offset to start earlier/later
+            p = p * 1.5 - 0.2
+
             p = Math.max(0, Math.min(1, p))
 
             progress.value = p
         }
 
-        // Count Up Animation Logic
+        // --- COUNT UP ANIMATION ---
         const startCounting = () => {
             let start = 0
             const duration = 2000
@@ -79,9 +115,10 @@ export default {
 
         onMounted(() => {
             window.addEventListener('scroll', handleScroll, { passive: true })
-            handleScroll() // Init timeline position
+            // Initial call to set state
+            handleScroll()
 
-            // Observer for counting animation
+            // Observer for counting animation triggering once
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
                     startCounting()
@@ -100,8 +137,10 @@ export default {
 
         return {
             sectionRef,
-            pathData,
-            activeY,
+            pathDataDesktop,
+            activeYDesktop,
+            pathDataMobile,
+            activeYMobile,
             milestones,
             progress,
             countProgress

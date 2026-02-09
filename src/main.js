@@ -18,6 +18,22 @@ export const createApp = ViteSSG(
     App,
     { routes },
     ({ app, router, routes, isClient, initialState }) => {
-        // Custom logic if needed
+        if (isClient) {
+            console.log('--- Font Loading Status ---');
+            const fontsToCheck = ['16px Balthazar', '16px Copperplate'];
+            // Force load the fonts we care about
+            const loadPromises = fontsToCheck.map(font => document.fonts.load(font));
+
+            Promise.all(loadPromises).then(() => {
+                fontsToCheck.forEach(font => {
+                    const isLoaded = document.fonts.check(font);
+                    console.log(`[Check] ${font}: ${isLoaded ? 'LOADED ✅' : 'NOT LOADED ❌'}`);
+                });
+                console.log('--- Detail Loaded Fonts ---');
+                document.fonts.forEach((font) => {
+                    console.log(`Face: ${font.family}, Status: ${font.status}, Display: ${font.display}`);
+                });
+            });
+        }
     },
 )

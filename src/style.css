@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
-.balthazar-regular {
-  font-family: "Balthazar", serif;
+
+@font-face {
+  font-family: 'Copperplate';
+  src: url('/fonts/Copperplate.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.copperplate-regular {
+  font-family: "Copperplate", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -15,6 +24,16 @@ body {
   background: linear-gradient(180deg, #120000 0%, #000000 100%);
   color: white;
   min-height: 100vh;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Copperplate', serif;
 }
 
 /* --- Global Animations --- */

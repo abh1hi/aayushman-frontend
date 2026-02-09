@@ -5,14 +5,15 @@
       <!-- Optional Heading -->
       <!-- <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 text-center">Latest Insights</h2> -->
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <BlogCard 
-           v-for="(blog, index) in blogs"
-           :key="index"
-           :title="blog.title"
-           :date="blog.date"
-           :image="blog.image"
-        />
+      <!-- Scroll/Grid Layout -->
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0 scrollbar-hide">
+        <div v-for="(blog, index) in blogs" :key="index" class="min-w-[85vw] sm:min-w-[350px] snap-center md:min-w-0 md:w-auto flex-shrink-0 md:flex-shrink">
+            <BlogCard 
+               :title="blog.title"
+               :date="blog.date"
+               :image="blog.image"
+            />
+        </div>
       </div>
 
     </div>
