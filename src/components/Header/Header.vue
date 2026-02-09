@@ -1,6 +1,38 @@
 <template>
-  <header class="fixed top-6 left-0 right-0 z-50 px-4 flex justify-center">
-    <div class="header-pill rounded-full px-6 py-3 flex items-center justify-between w-full max-w-6xl">
+  <header class="fixed top-4 left-0 right-0 z-50 px-4 flex justify-center w-full">
+    
+    <!-- Mobile Header -->
+    <div class="md:hidden flex justify-between items-center w-full">
+       <!-- Left: Actions -->
+       <div class="flex items-center gap-3">
+          <!-- Menu Toggle -->
+          <button class="w-12 h-12 rounded-full bg-black/60 border border-white/10 backdrop-blur-md flex flex-col gap-1.5 items-center justify-center shadow-lg active:scale-95 transition-transform">
+             <span class="w-5 h-0.5 bg-gray-200 rounded-full"></span>
+             <span class="w-5 h-0.5 bg-gray-200 rounded-full"></span>
+             <span class="w-5 h-0.5 bg-gray-200 rounded-full"></span>
+          </button>
+
+          <!-- Call Button -->
+          <a href="tel:+919777995101" class="w-12 h-12 rounded-full bg-black/60 border border-white/10 backdrop-blur-md flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 fill-current" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 1.23 0 2.45.2 3.57.57.35.13.74.04 1.02-.24l2.2 2.2z"/>
+             </svg>
+          </a>
+       </div>
+
+       <!-- Right: Logo -->
+       <a href="/" class="flex items-center gap-3 bg-black/30 px-3 py-1.5 rounded-xl backdrop-blur-sm">
+          <img src="/ALSA_LOGO.svg" alt="ALSA" class="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+          <div class="text-left leading-none">
+             <h1 class="text-white font-bold text-[0.55rem] tracking-wider font-copperplate">
+               AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE®
+             </h1>
+          </div>
+       </a>
+    </div>
+
+    <!-- Desktop Header -->
+    <div class="hidden md:flex header-pill rounded-full px-6 py-3 items-center justify-between w-full max-w-6xl">
       
       <!-- Logo Section -->
       <div class="flex items-center gap-3">
