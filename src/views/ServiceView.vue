@@ -71,7 +71,8 @@ useHead({
   meta: [
     { name: 'description', content: computed(() => content.value.metaDesc) },
     { property: 'og:title', content: computed(() => content.value.title) },
-    { property: 'og:description', content: computed(() => content.value.metaDesc) }
+    { property: 'og:description', content: computed(() => content.value.metaDesc) },
+    { property: 'og:image', content: 'https://ayushman-ambulance.web.app/alsalogo.png' }
   ],
   script: [
     {

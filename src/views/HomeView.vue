@@ -23,6 +23,7 @@ useHead({
     { name: 'keywords', content: 'ambulance service, life support ambulance, air ambulance India, road ambulance Gurgaon, rail ambulance services, emergency medical transport, ICU ambulance, patient transport, 24/7 ambulance Delhi NCR, Ayushmaan Life Support' },
     { property: 'og:title', content: 'Ayushmaan Life Support Ambulance | Rapid Response Expert Care' },
     { property: 'og:description', content: '24/7 Emergency Medical Services (EMS) provider. Best Air, Road & Rail Ambulance services in India with ICU setup.' },
+    { property: 'og:image', content: 'https://ayushman-ambulance.web.app/alsalogo.png' },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: 'en_IN' },
     { name: 'geo.region', content: 'IN-DL' }, // Targeting Delhi/NCR region signal

@@ -32,7 +32,7 @@ onMounted(async () => {
                 { name: 'description', content: post.value.summary },
                 { property: 'og:title', content: post.value.title },
                 { property: 'og:description', content: post.value.summary },
-                { property: 'og:image', content: post.value.coverImage }
+                { property: 'og:image', content: post.value.coverImage || 'https://ayushman-ambulance.web.app/alsalogo.png' }
             ]
         });
     }

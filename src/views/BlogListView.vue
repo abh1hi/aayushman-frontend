@@ -19,6 +19,18 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 
 const posts = ref([]);
 const loading = ref(true);
+import { useHead } from '@vueuse/head';
+
+useHead({
+    title: 'Blog | Ayushmaan Life Support Ambulance',
+    meta: [
+        { name: 'description', content: 'Latest updates and health information from Ayushmaan Life Support Ambulance.' },
+        { property: 'og:title', content: 'Blog | Ayushmaan Life Support Ambulance' },
+        { property: 'og:description', content: 'Latest updates and health information from Ayushmaan Life Support Ambulance.' },
+        { property: 'og:image', content: 'https://ayushman-ambulance.web.app/alsalogo.png' },
+        { property: 'og:type', content: 'website' }
+    ]
+});
 
 onMounted(async () => {
     try {
