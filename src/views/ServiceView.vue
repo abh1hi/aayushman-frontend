@@ -57,7 +57,7 @@ const contentMap = {
 
 // Fallback content
 const defaultContent = {
-  title: 'All Services | Ayushman Life Support',
+  title: 'All Services | Ayushmaan Life Support',
   heading: 'Our Medical Services',
   description: 'Comprehensive emergency medical solutions.',
   features: []
@@ -83,7 +83,7 @@ useHead({
         description: content.value.metaDesc,
         provider: {
           '@type': 'MedicalOrganization',
-          name: 'Ayushman Life Support Ambulance',
+          name: 'Ayushmaan Life Support Ambulance',
           url: 'https://ayushman-ambulance.web.app',
           logo: 'https://ayushman-ambulance.web.app/logo.png' 
         },

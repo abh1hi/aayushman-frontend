@@ -22,7 +22,7 @@ export default {
             {
                 name: 'Rajesh Gupta',
                 role: 'Referring Doctor',
-                review: 'I regularly entrust my patients to Ayushman for inter-hospital transfers. Their ICU ambulances are perfectly equipped.',
+                review: 'I regularly entrust my patients to Ayushmaan for inter-hospital transfers. Their ICU ambulances are perfectly equipped.',
                 rating: 5,
                 image: 'https://placehold.co/150x150/666/FFF?text=Rajesh'
             },

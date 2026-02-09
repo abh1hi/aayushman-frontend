@@ -15,7 +15,7 @@
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Speed & Compassion</span>
           </h2>
           <p class="text-gray-400 text-lg leading-relaxed">
-            Ayushman Life Support Ambulance is India's most trusted emergency response network. 
+            Ayushmaan Life Support Ambulance is India's most trusted emergency response network. 
             We combine state-of-the-art medical technology with a compassionate human touch to ensure 
             every patient receives the best possible care during critical moments.
           </p>

@@ -14,7 +14,7 @@
          <div class="relative z-10 text-center space-y-4 mt-4">
             <!-- Icon/Logo Placeholder -->
             <div class="flex justify-center mb-4">
-                <img src="/ALSA_LOGO.svg" alt="Ayushman Logo" class="h-16 w-auto opacity-100 drop-shadow-md" />
+                <img src="/ALSA_LOGO.svg" alt="Ayushmaan Logo" class="h-16 w-auto opacity-100 drop-shadow-md" />
             </div>
             
             <!-- Title -->

@@ -4,7 +4,7 @@
       
       <!-- Logo & About -->
       <div>
-        <h2 class="text-2xl font-bold text-white mb-4">AYUSHMAN <span class="text-red-600">AMBULANCE</span></h2>
+        <h2 class="text-2xl font-bold text-white mb-4">AYUSHMAAN <span class="text-red-600">AMBULANCE</span></h2>
         <p class="text-sm text-gray-400 mb-6">
           Providing world-class emergency medical services with a fleet of advanced ambulances and trained professionals.
         </p>
@@ -61,7 +61,7 @@
 
     </div>
     <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs text-gray-500">
-      &copy; 2024 Ayushman Life Support Ambulance. All rights reserved.
+      &copy; 2024 Ayushmaan Life Support Ambulance. All rights reserved.
     </div>
   </footer>
 </template>

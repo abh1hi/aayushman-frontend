@@ -12,6 +12,8 @@ const routes = [
     { path: '/services/road-ambulance', component: ServiceView },
     { path: '/locations/ambulance-service-gurgaon-delhi-ncr', component: ServiceView },
     { path: '/services/event-medical-support', component: ServiceView },
+    { path: '/blog', component: () => import('./views/BlogListView.vue') },
+    { path: '/blog/:slug', component: () => import('./views/BlogPostView.vue') },
 ]
 
 export const createApp = ViteSSG(

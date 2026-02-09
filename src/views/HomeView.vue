@@ -17,11 +17,11 @@ import ContactUsSection from '../components/ContactUsSection/ContactUsSection.vu
 import AppFooter from '../components/AppFooter/AppFooter.vue'
 
 useHead({
-  title: 'Ayushman Life Support Ambulance | Air, Road & Rail Emergency Services 24/7',
+  title: 'Ayushmaan Life Support Ambulance | Air, Road & Rail Emergency Services 24/7',
   meta: [
     { name: 'description', content: 'Leading trusted life support ambulance provider in India. Offering 24/7 emergency medical transport via Air, Road, and Rail. ICU, Ventilator, and Critical Care services available in Delhi, Gurgaon, and Pan-India.' },
-    { name: 'keywords', content: 'ambulance service, life support ambulance, air ambulance India, road ambulance Gurgaon, rail ambulance services, emergency medical transport, ICU ambulance, patient transport, 24/7 ambulance Delhi NCR, Ayushman Life Support' },
-    { property: 'og:title', content: 'Ayushman Life Support Ambulance | Rapid Response Expert Care' },
+    { name: 'keywords', content: 'ambulance service, life support ambulance, air ambulance India, road ambulance Gurgaon, rail ambulance services, emergency medical transport, ICU ambulance, patient transport, 24/7 ambulance Delhi NCR, Ayushmaan Life Support' },
+    { property: 'og:title', content: 'Ayushmaan Life Support Ambulance | Rapid Response Expert Care' },
     { property: 'og:description', content: '24/7 Emergency Medical Services (EMS) provider. Best Air, Road & Rail Ambulance services in India with ICU setup.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: 'en_IN' },
@@ -34,7 +34,7 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'MedicalOrganization',
-        name: 'Ayushman Life Support Ambulance',
+        name: 'Ayushmaan Life Support Ambulance',
         url: 'https://ayushman-ambulance.web.app',
         logo: 'https://ayushman-ambulance.web.app/logo.png', // Replace with actual logo URL if available
         contactPoint: {
