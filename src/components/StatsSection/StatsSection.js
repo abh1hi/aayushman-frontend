@@ -3,8 +3,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 export default {
     setup() {
         const sectionRef = ref(null)
-        const progress = ref(0) // Timeline scroll progress
-        const countProgress = ref(0) // Number counting progress
+        const progress = ref(0) // Timeline scroll progress (also used for number now)
 
         // Milestones data
         const milestones = [
@@ -90,45 +89,10 @@ export default {
             progress.value = p
         }
 
-        // --- COUNT UP ANIMATION ---
-        const startCounting = () => {
-            let start = 0
-            const duration = 2000
-            const startTime = performance.now()
-
-            const animate = (currentTime) => {
-                const elapsed = currentTime - startTime
-                const progress = Math.min(elapsed / duration, 1)
-
-                // Ease out cubic
-                const easeOut = 1 - Math.pow(1 - progress, 3)
-
-                countProgress.value = easeOut
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate)
-                }
-            }
-
-            requestAnimationFrame(animate)
-        }
-
         onMounted(() => {
             window.addEventListener('scroll', handleScroll, { passive: true })
             // Initial call to set state
             handleScroll()
-
-            // Observer for counting animation triggering once
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    startCounting()
-                    observer.disconnect()
-                }
-            }, { threshold: 0.3 })
-
-            if (sectionRef.value) {
-                observer.observe(sectionRef.value)
-            }
         })
 
         onUnmounted(() => {
@@ -142,8 +106,7 @@ export default {
             pathDataMobile,
             activeYMobile,
             milestones,
-            progress,
-            countProgress
+            progress
         }
     }
 }

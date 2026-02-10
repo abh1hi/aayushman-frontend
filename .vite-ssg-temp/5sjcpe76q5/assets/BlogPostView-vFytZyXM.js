@@ -25,7 +25,7 @@ const _sfc_main = {
             { name: "description", content: post.value.summary },
             { property: "og:title", content: post.value.title },
             { property: "og:description", content: post.value.summary },
-            { property: "og:image", content: post.value.coverImage }
+            { property: "og:image", content: post.value.coverImage || "https://ayushman-ambulance.web.app/alsalogo.png" }
           ]
         });
       }
@@ -37,9 +37,9 @@ const _sfc_main = {
     };
     return (_ctx, _push, _parent, _attrs) => {
       if (post.value) {
-        _push(`<div${ssrRenderAttrs(mergeProps({ class: "blog-post" }, _attrs))} data-v-9e7a460c><h1 data-v-9e7a460c>${ssrInterpolate(post.value.title)}</h1><div class="meta" data-v-9e7a460c>Published on ${ssrInterpolate(formatDate(post.value.publishedDate))}</div><div class="content" data-v-9e7a460c>${post.value.content ?? ""}</div></div>`);
+        _push(`<div${ssrRenderAttrs(mergeProps({ class: "blog-post" }, _attrs))} data-v-9b37108d><h1 data-v-9b37108d>${ssrInterpolate(post.value.title)}</h1><div class="meta" data-v-9b37108d>Published on ${ssrInterpolate(formatDate(post.value.publishedDate))}</div><div class="content" data-v-9b37108d>${post.value.content ?? ""}</div></div>`);
       } else {
-        _push(`<div${ssrRenderAttrs(_attrs)} data-v-9e7a460c>Loading...</div>`);
+        _push(`<div${ssrRenderAttrs(_attrs)} data-v-9b37108d>Loading...</div>`);
       }
     };
   }
@@ -50,7 +50,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/views/BlogPostView.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const BlogPostView = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9e7a460c"]]);
+const BlogPostView = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9b37108d"]]);
 export {
   BlogPostView as default
 };

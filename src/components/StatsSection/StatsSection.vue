@@ -140,7 +140,7 @@
                 <!-- Giant Number -->
                 <div class="animate-fade-in-up">
                    <h2 class="stat-number text-8xl font-bold text-white tracking-tighter">
-                     {{ Math.floor(500000 * countProgress).toLocaleString() }}+
+                     {{ Math.floor(500000 * progress).toLocaleString() }}+
                    </h2>
                    <p class="text-gray-400 text-sm uppercase tracking-[0.2em] mt-2">Lives Saved</p>
                 </div>

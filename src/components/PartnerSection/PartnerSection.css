@@ -1,5 +1,5 @@
 .partner-section {
-    background: radial-gradient(250.39% 597.89% at 23.5% 50%, #000000 0%, #902725 100%);
+    background: #0f0101;
     overflow: hidden;
 }
 
@@ -59,10 +59,10 @@
 
 .slider::before {
     left: 0;
-    background: linear-gradient(to right, #0d0d0d 0%, transparent 100%);
+    background: linear-gradient(to right, #0f0101 0%, transparent 100%);
 }
 
 .slider::after {
     right: 0;
-    background: linear-gradient(to left, #0d0d0d 0%, transparent 100%);
+    background: linear-gradient(to left, #0f0101 0%, transparent 100%);
 }
