@@ -126,7 +126,7 @@
           
           <!-- Left Content -->
           <div class="space-y-6 text-center md:text-left pt-12 md:pt-0">
-            <h1 class="text-4xl md:text-6xl font-black tracking-widest leading-tight text-white/90 animate-slide-up">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-black tracking-widest leading-tight text-white/90 animate-slide-up pl-8 md:pl-12">
               RACING TIME. <br/>
               <span class="text-white">DELIVERING CARE.</span>
             </h1>

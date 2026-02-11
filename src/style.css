@@ -16,16 +16,10 @@
 }
 
 html {
-  font-size: 14px;
-  /* Base size for mobile */
+  /* Use 100% to inherit from browser/device font size settings */
+  /* This respects user accessibility preferences */
+  font-size: 100%;
   scroll-behavior: smooth;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-    /* Standard size for tablet/desktop */
-  }
 }
 
 body {
