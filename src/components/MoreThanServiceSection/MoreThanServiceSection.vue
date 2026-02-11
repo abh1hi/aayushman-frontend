@@ -29,12 +29,9 @@
             </p>
 
              <!-- Certifications -->
-            <div class="flex justify-center gap-4 mt-6 opacity-90">
-                 <!-- Using existing assets if available or placeholders -->
-                 <!-- These paths are checking against what was in the desktop view -->
-               <img src="/info_section_icon_png/196a9f63abb30df5665582bde48905320514a824.png" alt="Certification 1" class="h-8 w-auto object-contain grayscale hover:grayscale-0 transition-all" />
-               <img src="/info_section_icon_png/b719259431920ab9c9ed371105c7e8a0f7ed4845.png" alt="Certification 2" class="h-8 w-auto object-contain grayscale hover:grayscale-0 transition-all" />
-            </div>
+             <div class="flex justify-center gap-4 mt-6 opacity-90">
+                <img src="/info_section_icon_png/phone-logo.png" alt="ALSA Logo" class="h-12 w-auto object-contain" />
+             </div>
          </div>
 
          <!-- Bottom Content: Cards -->
@@ -50,7 +47,7 @@
                   </svg>
                </div>
                <div>
-                  <h3 class="text-white font-bold text-sm leading-tight mb-1">Pan-India Medical Response network</h3>
+                  <h3 class="text-white font-bold text-sm leading-tight mb-1 font-sans">Pan-India medical response network</h3>
                   <p class="text-gray-400 text-[10px] leading-snug">
                     Emergency and planned medical response across cities, highways, and intercity routes.
                   </p>
@@ -66,7 +63,7 @@
                   </svg>
                </div>
                <div>
-                  <h3 class="text-white font-bold text-sm leading-tight mb-1">End to End Emergency & Care Solutions</h3>
+                  <h3 class="text-white font-bold text-sm leading-tight mb-1 font-sans">End to end emergency & care solutions</h3>
                   <p class="text-gray-400 text-[10px] leading-snug">
                     Emergency response, critical transfers, hospital coordination, and home care services.
                   </p>
@@ -110,7 +107,7 @@
                     </svg>
                  </div>
                  <div>
-                   <h3 class="text-white font-bold text-lg mb-1">Pan-India Medical Response network</h3>
+                   <h3 class="text-white font-bold text-lg mb-1 font-sans">Pan-India medical response network</h3>
                    <p class="text-gray-400 text-sm">
                      Emergency and planned medical response across cities, highways, and intercity routes.
                    </p>
@@ -127,7 +124,7 @@
                     </svg>
                  </div>
                  <div>
-                   <h3 class="text-white font-bold text-lg mb-1">End to End Emergency & Care Solutions</h3>
+                   <h3 class="text-white font-bold text-lg mb-1 font-sans">End to end emergency & care solutions</h3>
                    <p class="text-gray-400 text-sm">
                      Emergency response, critical transfers, hospital coordination, and home care services.
                    </p>
@@ -138,10 +135,7 @@
     
             <!-- Certifications -->
             <div class="flex items-center gap-6 pt-4 opacity-80">
-               <!-- ISO Mockup -->
-               <img src="/info_section_icon_png/196a9f63abb30df5665582bde48905320514a824.png" alt="Certification 1" class="h-16 w-auto object-contain" />
-               <!-- Other badges mockup -->
-               <img src="/info_section_icon_png/b719259431920ab9c9ed371105c7e8a0f7ed4845.png" alt="Certification 2" class="h-16 w-auto object-contain" />
+               <img src="/info_section_icon_png/desktop-logo.png" alt="ALSA Logo" class="h-16 w-auto object-contain" />
             </div>
     
           </div>

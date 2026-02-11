@@ -9,7 +9,7 @@
       <!-- Using a dark gradient/map placeholder for now. 
            In a real scenario, this would be a map image. -->
       <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" 
-           style="background-image: url('/Hero_page_gif.webp'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
+           style="background-image: url('/ezgif-1d63408295ce0b1a.gif'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
       </div>
       
       <!-- Content Container -->
@@ -29,9 +29,9 @@
             <!-- Green glow effect -->
             <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
-            <h3 class="text-xl font-black mb-6 uppercase tracking-wide leading-tight text-white text-center">
+            <h3 class="text-xl font-black mb-6 uppercase tracking-wide leading-tight text-white">
               Get Quick Ambulance <br/>
-              <span class="text-gray-400">Cost Instantly...</span>
+              <span class="text-white">Cost Instantly...</span>
             </h3>
 
             <form @submit.prevent="handleEstimate" class="space-y-4">
@@ -120,7 +120,7 @@
     <!-- ========================================== -->
     <div class="hidden md:flex relative min-h-screen items-center justify-center pt-24 pb-12">
         <!-- Background overlay/effects -->
-        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center animate-scale-in" style="background-image: url('/Hero_page_gif.webp');"></div>
+        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center animate-scale-in" style="background-image: url('/ezgif-1d63408295ce0b1a.gif');"></div>
     
         <div class="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
           
