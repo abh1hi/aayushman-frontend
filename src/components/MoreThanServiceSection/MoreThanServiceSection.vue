@@ -4,72 +4,73 @@
     <!-- ========================================== -->
     <!--          MOBILE VIEW (md:hidden)           -->
     <!-- ========================================== -->
-    <div class="md:hidden relative min-h-screen w-full flex flex-col justify-between pt-20 pb-8 px-6 bg-cover bg-center overflow-hidden"
+    <div class="md:hidden relative min-h-screen w-full flex flex-col pt-20 pb-12 px-8 bg-cover bg-center overflow-hidden"
          style="background-image: url('/about-section/second-section.jpeg');">
          
          <!-- Dark Overlay for Readability -->
          <div class="absolute inset-0 bg-black/70 z-0"></div>
 
-         <!-- Top Content: Branding & Title -->
-         <div class="relative z-10 text-center space-y-4 mt-4">
-            <!-- Icon/Logo Placeholder -->
-            <div class="flex justify-center mb-4">
-                <img src="/ALSA_LOGO.svg" alt="Ayushmaan Logo" class="h-16 w-auto opacity-100 drop-shadow-md" />
-            </div>
+         <!-- Content Container -->
+         <div class="relative z-10 flex flex-col h-full mt-[80%]">
             
-            <!-- Title -->
-            <h2 class="text-2xl font-black text-white tracking-widest uppercase leading-tight drop-shadow-lg">
-              MORE THAN A <br/>
-              <span class="text-red-500">SERVICE PROVIDER</span>
-            </h2>
-            
-            <!-- Description -->
-            <p class="text-gray-300 text-xs px-2 leading-relaxed max-w-xs mx-auto drop-shadow-md font-medium">
-              ALSA is a Delhi NCR based private EMS provider offering medical transport, emergency response, and critical care solutions, since 2008.
-            </p>
-
-             <!-- Certifications -->
-             <div class="flex justify-center gap-4 mt-6 opacity-90">
-                <img src="/info_section_icon_png/phone-logo.png" alt="ALSA Logo" class="h-12 w-auto object-contain" />
-             </div>
-         </div>
-
-         <!-- Bottom Content: Cards -->
-         <div class="relative z-10 space-y-3 mt-auto w-full max-w-[360px] mx-auto">
-            
-            <!-- Card 1 -->
-            <div class="bg-black/60 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center gap-4">
-               <div class="bg-white/5 p-2 rounded-full shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
+            <!-- Top Content: Certifications, Title & Description -->
+            <div class="space-y-4">
+               
+               <!-- Certifications at Top -->
+               <div class="flex items-center gap-3">
+                  <img src="/info_section_icon_png/phone-logo.png" alt="ALSA Certifications" class="h-8 w-auto object-contain" />
                </div>
-               <div>
-                  <h3 class="text-white font-bold text-sm leading-tight mb-1 font-sans">Pan-India medical response network</h3>
-                  <p class="text-gray-400 text-[10px] leading-snug">
-                    Emergency and planned medical response across cities, highways, and intercity routes.
-                  </p>
-               </div>
+
+               <!-- Title -->
+               <h2 class="text-lg font-black text-white uppercase leading-tight">
+                 MORE THAN A <br/>
+                 SERVICE PROVIDER
+               </h2>
+               
+               <!-- Description -->
+               <p class="text-gray-300 text-xs leading-relaxed max-w-sm">
+                 ALSA is a Delhi NCR based private EMS provider offering medical transport, emergency response, and critical care solutions, since 2008.
+               </p>
+
             </div>
 
-            <!-- Card 2 -->
-             <div class="bg-black/60 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center gap-4">
-               <div class="bg-white/5 p-2 rounded-full shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    <path d="M9 12l2 2 4-4"></path>
-                  </svg>
+            <!-- Cards Section -->
+            <div class="space-y-3 mt-8">
+               
+               <!-- Card 1 -->
+               <div class="bg-black/50 backdrop-blur-sm border border-white/10 p-4 rounded-2xl flex items-start gap-4">
+                  <div class="bg-red-500/10 p-2 rounded-full shrink-0">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                       <circle cx="12" cy="12" r="10"></circle>
+                       <line x1="2" y1="12" x2="22" y2="12"></line>
+                       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                     </svg>
+                  </div>
+                  <div>
+                     <h3 class="text-white font-bold text-sm leading-tight mb-1 font-sans">Pan-India medical response network</h3>
+                     <p class="text-gray-400 text-[10px] leading-snug">
+                       Emergency and planned medical response across cities, highways, and intercity routes.
+                     </p>
+                  </div>
                </div>
-               <div>
-                  <h3 class="text-white font-bold text-sm leading-tight mb-1 font-sans">End to end emergency & care solutions</h3>
-                  <p class="text-gray-400 text-[10px] leading-snug">
-                    Emergency response, critical transfers, hospital coordination, and home care services.
-                  </p>
-               </div>
-            </div>
 
+               <!-- Card 2 -->
+               <div class="bg-black/50 backdrop-blur-sm border border-white/10 p-4 rounded-2xl flex items-start gap-4">
+                  <div class="bg-red-500/10 p-2 rounded-full shrink-0">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                       <path d="M9 12l2 2 4-4"></path>
+                     </svg>
+                  </div>
+                  <div>
+                     <h3 class="text-white font-bold text-sm leading-tight mb-1 font-sans">End to end emergency & care solutions</h3>
+                     <p class="text-gray-400 text-[10px] leading-snug">
+                       Emergency response, critical transfers, hospital coordination, and home care services.
+                     </p>
+                  </div>
+               </div>
+
+            </div>
          </div>
     </div>
 
