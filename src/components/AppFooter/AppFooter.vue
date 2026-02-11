@@ -9,7 +9,7 @@
             <img src="/ALSA_LOGO.svg" alt="ALSA Logo" class="w-12 h-auto object-contain" />
          </div>
          <div class="text-left leading-tight">
-            <h1 class="text-white font-bold text-sm tracking-wide">AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE</h1>
+            <h1 class="text-white font-bold text-sm tracking-wide font-sans">AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE</h1>
          </div>
       </div>
 

@@ -12,7 +12,7 @@
     </div>
 
     <!-- Image -->
-    <div class="w-full relative h-[400px] md:h-[450px] overflow-hidden">
+    <div class="w-full relative aspect-[328/491] md:aspect-[405/587] overflow-hidden">
         <img :src="image" :alt="title" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
     </div>
 

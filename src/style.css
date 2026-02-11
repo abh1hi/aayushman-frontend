@@ -16,10 +16,17 @@
 }
 
 html {
-  /* Use 100% to inherit from browser/device font size settings */
-  /* This respects user accessibility preferences */
-  font-size: 100%;
+  /* Mobile: Larger base for better readability (18px on most devices) */
+  /* This still respects user accessibility preferences */
+  font-size: 112.5%;
   scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+  html {
+    /* Desktop: Standard size (16px on most devices) */
+    font-size: 100%;
+  }
 }
 
 body {
@@ -30,12 +37,12 @@ body {
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1:not(.font-sans),
+h2:not(.font-sans),
+h3:not(.font-sans),
+h4:not(.font-sans),
+h5:not(.font-sans),
+h6:not(.font-sans) {
   font-family: 'Copperplate', serif;
 }
 
