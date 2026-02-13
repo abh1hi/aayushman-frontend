@@ -58,7 +58,12 @@
               <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
                 <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
                   class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
-                <span class="text-green-500 ml-2 text-sm">📞</span>
+                <span class="text-green-500 ml-2">
+                   <!-- Phone Icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                   </svg>
+                </span>
               </div>
 
                <!-- Ambulance Type -->
@@ -75,18 +80,19 @@
               <!-- Buttons Row -->
               <div class="flex gap-3 pt-2">
                 <button type="submit" :disabled="loading"
-                  class="flex-1 bg-[#4DA959] hover:bg-[#3d8b46] text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 disabled:opacity-70 group">
-                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center group-hover:bg-[#254233] transition-colors">
-                     <!-- Arrow Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  class="flex-1 bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center gap-2 px-2 disabled:opacity-70 group border border-green-600/50">
+                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0">
+                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain" />
                   </div>
-                  <span class="text-xs flex-1 text-center pr-2">See Estimated Fare</span>
+                  <span class="text-sm flex-1 text-center whitespace-nowrap">See Estimated Fare</span>
                 </button>
                 
                 <button type="button" @click="handleReset"
                   class="w-[90px] h-[48px] rounded-full border border-gray-600 bg-transparent hover:bg-white/5 text-gray-300 font-semibold transition flex items-center justify-center gap-2">
                   <span class="text-xs">Reset</span> 
-                  <span class="text-green-500 text-xs">↻</span>
+                  <span class="text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                  </span>
                 </button>
               </div>
 
@@ -151,21 +157,30 @@
               <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
                 <input v-model="pickup" type="text" placeholder="Enter Pickup Address or area" 
                   class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
-                <span class="text-green-500 cursor-pointer text-sm">➔</span>
+                <span class="text-green-500 cursor-pointer">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </span>
               </div>
               
               <!-- Destination -->
               <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
                 <input v-model="destination" type="text" placeholder="Enter Destination" 
                   class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
-                <span class="text-green-500 cursor-pointer text-sm">➔</span>
+                <span class="text-green-500 cursor-pointer">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </span>
               </div>
     
               <!-- Mobile Number -->
               <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
                 <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
                   class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
-                <span class="text-green-500 text-sm">📞</span>
+                <span class="text-green-500">
+                   <!-- Phone Icon -->
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                   </svg>
+                </span>
               </div>
     
               <!-- Ambulance Type -->
@@ -188,7 +203,10 @@
                 
                 <button type="button" @click="handleReset"
                   class="flex-1 h-[48px] rounded-full border border-gray-600 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 font-semibold transition flex items-center justify-center gap-2 px-2">
-                  <span class="text-sm">Reset</span> <span class="text-green-500 text-sm">↻</span>
+                  <span class="text-sm">Reset</span>
+                  <span class="text-green-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                  </span>
                 </button>
               </div>
     

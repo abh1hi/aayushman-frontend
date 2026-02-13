@@ -54,9 +54,9 @@ useHead({
           addressCountry: 'IN'
         },
         sameAs: [
-          'https://www.facebook.com/AyushmanAmbulance',
-          'https://twitter.com/AyushmanEMS',
-          'https://www.instagram.com/AyushmanEMS'
+          'https://www.facebook.com/airambulancegurgaon',
+          'https://x.com/alsaambulance',
+          'https://www.instagram.com/alsaambulance'
         ],
         makesOffer: [
           {
