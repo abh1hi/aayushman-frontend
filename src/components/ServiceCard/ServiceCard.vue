@@ -2,7 +2,7 @@
   <div class="service-card w-full group transition-all duration-300 rounded-3xl overflow-hidden relative h-[420px] shadow-xl hover:shadow-2xl">
     <!-- Background Image (SEO Optimized) -->
     <img :src="image" 
-         :alt="title + ' - Ayushmaan Life Support Ambulance'"
+         :alt="alt || (title + ' - Ayushmaan Life Support Ambulance')"
          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
     <!-- Dark Overlay for better text readability -->

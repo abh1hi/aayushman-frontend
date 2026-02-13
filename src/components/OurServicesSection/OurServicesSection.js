@@ -8,27 +8,32 @@ export default {
             {
                 title: 'Road Ambulance',
                 description: 'Fully equipped ambulances with trained medical staff, ready to respond when every minute matters.',
-                image: '/third-section/road-ambulance.jpg'
+                image: '/media/SERVICES/photo.jpg',
+                alt: 'Advanced Life Support Road Ambulance responding to an emergency'
             },
             {
                 title: 'Air Ambulance',
                 description: 'Seamless road to air medical transfers with critical care teams and advanced support.',
-                image: '/third-section/air-ambulance.jpg'
+                image: '/media/SERVICES/air ambu.jpg',
+                alt: 'Air Ambulance aircraft ready for patient transfer on runway'
             },
             {
                 title: 'Rail Ambulance',
                 description: 'Long-distance medical transfers with onboard care, monitoring, and trained medical support.',
-                image: '/third-section/rail-ambulance.jpg'
+                image: '/media/SERVICES/train ambu.jpg',
+                alt: 'Rail Ambulance compartment with medical equipment and staff'
             },
             {
                 title: 'Mortuary Transfer',
                 description: 'Safe and respectful transfers, with trained personnel guiding every moment.',
-                image: '/third-section/morturary-van.jpg'
+                image: '/media/SERVICES/mortuary.jpg',
+                alt: 'Respectful mortuary van for deceased transport'
             },
             {
                 title: 'VIP Transfers',
                 description: 'Personalized medical assistance designed for smooth, comfortable patient transfers.',
-                image: '/third-section/vip-transfer.jpg'
+                image: '/media/SERVICES/vip.jpg',
+                alt: 'Luxury medical transport for VIP patient transfer'
             }
         ])
 

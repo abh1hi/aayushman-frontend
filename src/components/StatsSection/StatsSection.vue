@@ -14,9 +14,9 @@
                   <span class="font-bold text-white">5,00,000+</span> patients supported in critical moments
               </p>
               <div class="flex justify-center -space-x-3">
-                 <img src="https://placehold.co/40x40/333/FFF?text=U1" class="w-10 h-10 rounded-full border-2 border-black" />
-                 <img src="https://placehold.co/40x40/444/FFF?text=U2" class="w-10 h-10 rounded-full border-2 border-black" />
-                 <img src="https://placehold.co/40x40/555/FFF?text=U3" class="w-10 h-10 rounded-full border-2 border-black" />
+                 <img src="https://placehold.co/40x40/333/FFF?text=U1" alt="Patient Reviewer 1" class="w-10 h-10 rounded-full border-2 border-black" />
+                 <img src="https://placehold.co/40x40/444/FFF?text=U2" alt="Patient Reviewer 2" class="w-10 h-10 rounded-full border-2 border-black" />
+                 <img src="https://placehold.co/40x40/555/FFF?text=U3" alt="Patient Reviewer 3" class="w-10 h-10 rounded-full border-2 border-black" />
               </div>
           </div>
 
@@ -117,9 +117,9 @@
           <!-- Top Pill -->
           <div class="stat-pill self-start rounded-full px-6 py-2 flex items-center gap-4 mb-12">
              <div class="flex -space-x-3">
-                <img src="https://placehold.co/40x40/333/FFF?text=U1" class="w-8 h-8 rounded-full border border-gray-700" />
-                <img src="https://placehold.co/40x40/444/FFF?text=U2" class="w-8 h-8 rounded-full border border-gray-700" />
-                <img src="https://placehold.co/40x40/555/FFF?text=U3" class="w-8 h-8 rounded-full border border-gray-700" />
+                <img src="https://placehold.co/40x40/333/FFF?text=U1" alt="Patient Reviewer 1" class="w-8 h-8 rounded-full border border-gray-700" />
+                <img src="https://placehold.co/40x40/444/FFF?text=U2" alt="Patient Reviewer 2" class="w-8 h-8 rounded-full border border-gray-700" />
+                <img src="https://placehold.co/40x40/555/FFF?text=U3" alt="Patient Reviewer 3" class="w-8 h-8 rounded-full border border-gray-700" />
              </div>
 
              <span class="text-sm text-gray-300">5,00,000+ patients supported in critical moments</span>

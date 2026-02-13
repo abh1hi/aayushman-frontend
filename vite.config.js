@@ -58,8 +58,10 @@ export default defineConfig({
   ssgOptions: {
     includedRoutes: async (paths, routes) => {
       const blogRoutes = await fetchBlogRoutes();
+      // Filter out dynamic routes (e.g., /blog/:slug) which can't be rendered without params
+      const staticPaths = paths.filter(path => !path.includes(':'));
       return [
-        ...paths,
+        ...staticPaths,
         '/services/air-ambulance-india',
         '/services/rail-ambulance',
         '/services/road-ambulance',

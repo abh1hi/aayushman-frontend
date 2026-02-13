@@ -1,13 +1,13 @@
 <template>
-  <section class="faq-section py-24 px-4">
+  <section class="faq-section py-16 md:py-24 px-4 font-sans">
     <div class="container mx-auto">
       
       <!-- Main Glass Card Container -->
-      <div class="faq-container p-8 md:p-16 flex flex-col lg:flex-row gap-12 lg:gap-24">
+      <div class="faq-container p-6 md:p-16 flex flex-col lg:flex-row gap-8 lg:gap-24">
         
         <!-- Left Content -->
         <div class="lg:w-1/3 flex flex-col justify-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 class="text-2xl md:text-5xl font-bold text-white mb-6 leading-tight font-sans">
                 All your questions, <br />
                 <span class="text-gray-400">clearly answered</span>
             </h2>
@@ -25,13 +25,13 @@
             <div 
                 v-for="(item, index) in faqs" 
                 :key="index"
-                class="faq-item cursor-pointer px-8 py-5"
+                class="faq-item cursor-pointer px-6 py-4 md:px-8 md:py-5"
                 :class="{ 'is-active': activeIndex === index }"
                 @click="toggle(index)"
             >
                 <!-- Header -->
                 <div class="flex items-center justify-between">
-                    <h3 class="faq-question text-white/90 font-medium text-lg select-none">
+                    <h3 class="faq-question text-white/90 font-medium text-lg select-none font-sans">
                         {{ item.question }}
                     </h3>
                     <span class="faq-icon text-gray-500">

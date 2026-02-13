@@ -2,7 +2,7 @@
   <div class="facility-card p-6 md:p-8 flex flex-col items-center text-center h-full max-w-lg mx-auto">
     <!-- Image Container with Rounded Corners -->
     <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-gray-800">
-       <img :src="image" alt="Facility Image" class="w-full h-full object-cover" />
+       <img :src="image" :alt="alt || title" class="w-full h-full object-cover" />
     </div>
 
     <!-- Description -->

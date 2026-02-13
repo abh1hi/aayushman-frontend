@@ -12,6 +12,7 @@
                :title="blog.title"
                :date="blog.date"
                :image="blog.image"
+               :alt="blog.alt"
             />
         </div>
       </div>

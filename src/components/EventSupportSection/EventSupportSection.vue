@@ -13,6 +13,7 @@
                 :description="event.description"
                 :image="event.image"
                 :imagePosition="event.imagePosition"
+                :alt="event.alt"
              />
          </div>
       </div>

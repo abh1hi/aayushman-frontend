@@ -9,7 +9,7 @@
       <!-- Using a dark gradient/map placeholder for now. 
            In a real scenario, this would be a map image. -->
       <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" 
-           style="background-image: url('/ezgif-1d63408295ce0b1a.gif'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
+           style="background-image: url('/media/hero-page-background-image-2.jpg'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
       </div>
       
       <!-- Content Container -->
@@ -120,7 +120,7 @@
     <!-- ========================================== -->
     <div class="hidden md:flex relative min-h-screen items-center justify-center pt-24 pb-12">
         <!-- Background overlay/effects -->
-        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center animate-scale-in" style="background-image: url('/ezgif-1d63408295ce0b1a.gif');"></div>
+        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center animate-scale-in" style="background-image: url('/media/hero-page-background-image-2.jpg');"></div>
     
         <div class="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
           

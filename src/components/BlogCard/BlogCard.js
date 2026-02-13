@@ -11,6 +11,10 @@ export default {
         image: {
             type: String,
             default: 'https://placehold.co/600x600/222/FFF?text=Blog+Post'
+        },
+        alt: {
+            type: String,
+            default: ''
         }
     }
 }

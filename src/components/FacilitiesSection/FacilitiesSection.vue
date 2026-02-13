@@ -19,8 +19,10 @@
            <transition name="fade" mode="out-in">
               <FacilityCard 
                  :key="activeIndex"
+                 :title="facilities[activeIndex].title"
                  :image="facilities[activeIndex].image"
                  :description="facilities[activeIndex].description"
+                 :alt="facilities[activeIndex].alt"
               />
            </transition>
         </div>

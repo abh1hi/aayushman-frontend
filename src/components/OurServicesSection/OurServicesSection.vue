@@ -12,12 +12,13 @@
                 :title="service.title"
                 :description="service.description"
                 :image="service.image"
+                :alt="service.alt"
             />
         </div>
 
         <!-- Last Card: Call to Action -->
         <div class="min-w-[85vw] sm:min-w-[350px] snap-center md:min-w-0 md:w-auto flex-shrink-0 md:flex-shrink">
-            <div class="cta-card p-8 text-white text-center md:text-left relative h-full rounded-2xl">
+            <div class="cta-card w-full p-8 text-white text-center md:text-left relative h-full rounded-3xl shadow-xl hover:shadow-2xl">
                <div class="relative z-10 h-full flex flex-col justify-center items-center md:items-start">
                  <h3 class="text-3xl font-bold mb-4">Not Sure What You Need?</h3>
                  <p class="text-gray-200 mb-8 max-w-sm">

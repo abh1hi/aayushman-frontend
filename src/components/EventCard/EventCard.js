@@ -16,6 +16,10 @@ export default {
             type: String,
             default: 'bottom', // 'top' or 'bottom'
             validator: (value) => ['top', 'bottom'].includes(value)
+        },
+        alt: {
+            type: String,
+            default: ''
         }
     }
 }

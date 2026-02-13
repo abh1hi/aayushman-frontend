@@ -5,7 +5,7 @@
     <!--          MOBILE VIEW (md:hidden)           -->
     <!-- ========================================== -->
     <div class="md:hidden relative min-h-screen w-full flex flex-col pt-20 pb-12 px-8 bg-cover bg-center overflow-hidden"
-         style="background-image: url('/about-section/second-section.jpeg');">
+         style="background-image: url('/media/Aboutus.jpg');">
          
          <!-- Dark Overlay for Readability -->
          <div class="absolute inset-0 bg-black/70 z-0"></div>
@@ -18,7 +18,7 @@
                
                <!-- Certifications at Top -->
                <div class="flex items-center gap-3">
-                  <img src="/info_section_icon_png/phone-logo.png" alt="ALSA Certifications" class="h-8 w-auto object-contain" />
+                  <img src="/info_section_icon_png/phone-logo.png" alt="Ayushmaan Life Support Ambulance 24/7 Helpline Icon" class="h-8 w-auto object-contain" />
                </div>
 
                <!-- Title -->
@@ -78,7 +78,7 @@
     <!-- ========================================== -->
     <!--          DESKTOP VIEW (hidden md:flex)     -->
     <!-- ========================================== -->
-    <section class="hidden md:flex mts-section min-h-[80vh] items-center py-20 relative overflow-hidden text-left" style="background-image: url('/about-section/second-section.jpeg');">
+    <section class="hidden md:flex mts-section min-h-[80vh] items-center py-20 relative overflow-hidden text-left" style="background-image: url('/media/Aboutus.jpg');">
         
         <div class="container mx-auto px-4 relative z-10 flex justify-end">
           
@@ -136,7 +136,7 @@
     
             <!-- Certifications -->
             <div class="flex items-center gap-6 pt-4 opacity-80">
-               <img src="/info_section_icon_png/desktop-logo.png" alt="ALSA Logo" class="h-16 w-auto object-contain" />
+               <img src="/info_section_icon_png/desktop-logo.png" alt="Ayushmaan Life Support Ambulance Accredited Service Provider Logo" class="h-16 w-auto object-contain" />
             </div>
     
           </div>

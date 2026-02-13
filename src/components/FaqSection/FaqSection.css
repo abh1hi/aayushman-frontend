@@ -70,7 +70,7 @@
 }
 
 .faq-item.is-active .faq-answer-wrapper {
-    max-height: 200px;
+    max-height: 500px;
     /* Arbitrary large enough height */
     opacity: 1;
     margin-top: 0.5rem;

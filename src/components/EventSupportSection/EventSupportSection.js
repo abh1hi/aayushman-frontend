@@ -8,19 +8,22 @@ export default {
                 title: 'Concert & Festival Medical Coverage',
                 description: 'On ground medical teams and ICU ambulances supporting large live events.',
                 imagePosition: 'bottom',
-                image: '/events/events_1.jpg'
+                image: '/media/EVENTS/events 1.jpg',
+                alt: 'Medical team providing support at a large concert festival'
             },
             {
                 title: 'Sports & Stadium Medical Support',
                 description: 'Prepared medical coverage for competitive sports and athletic events.',
                 imagePosition: 'top',
-                image: '/events/events_2.jpg'
+                image: '/media/EVENTS/events 2.jpg',
+                alt: 'Ambulance and medical staff on standby at a sports stadium'
             },
             {
                 title: 'Private Event Medical Coverage',
                 description: 'Discreet medical readiness for hotels, resorts, and private gatherings.',
                 imagePosition: 'bottom',
-                image: '/events/events_3.jpg'
+                image: '/media/EVENTS/events 3.jpg',
+                alt: 'Private event medical coverage setup at a luxury venue'
             }
         ]
 

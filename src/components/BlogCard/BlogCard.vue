@@ -3,7 +3,7 @@
     
     <!-- Image -->
     <div class="w-full h-full relative z-0">
-        <img :src="image" :alt="title" class="blog-image w-full h-full object-cover" />
+        <img :src="image" :alt="alt || title" class="blog-image w-full h-full object-cover" />
     </div>
 
     <!-- Overlay Content -->
