@@ -4,14 +4,14 @@
     <!-- ========================================== -->
     <!--          MOBILE VIEW (md:hidden)           -->
     <!-- ========================================== -->
-    <div class="md:hidden relative min-h-screen w-full flex flex-col pt-20 pb-12 px-8 bg-cover bg-center overflow-hidden"
-         style="background-image: url('/media/mobile-mode-second-section.jpeg');">
+    <div class="md:hidden w-full grid grid-cols-1 place-items-start relative">
+         <img src="/media/mobile-mode-second-section.jpeg" class="col-start-1 row-start-1 w-full h-full object-cover min-h-[100%]" alt="Background" />
          
-         <!-- Dark Overlay for Readability -->
-         <div class="absolute inset-0 bg-black/70 z-0"></div>
-
-         <!-- Content Container -->
-         <div class="relative z-10 flex flex-col h-full mt-[80%]">
+         <!-- Gradient Overlay -->
+         <div class="col-start-1 row-start-1 w-full h-full z-0 pointer-events-none bg-gradient-to-t from-[#021000] to-transparent"></div>
+         
+         <div class="col-start-1 row-start-1 w-full z-10 flex flex-col pt-20 pb-12 px-8">
+             <div class="relative z-10 flex flex-col h-full mt-[80%]">
             
             <!-- Top Content: Certifications, Title & Description -->
             <div class="space-y-4">
@@ -72,6 +72,7 @@
 
             </div>
          </div>
+    </div>
     </div>
 
 

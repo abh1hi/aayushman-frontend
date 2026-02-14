@@ -7,7 +7,7 @@
     <div class="md:hidden relative min-h-screen flex flex-col pt-24 pb-8 bg-[#0B1215]">
       <!-- Mobile Background -->
       <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" 
-           style="background-image: url('/media/hero-page-background-image-2.jpg'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
+           style="background-image: url('/media/hero-page-background-image-2.jpg');">
       </div>
       
       <!-- Content Container -->
@@ -34,21 +34,21 @@
 
             <form @submit.prevent="handleSubmit" class="space-y-5">
               <!-- Name Input -->
-              <div class="bg-white/5 border border-white/10 flex items-center px-5 h-[56px] rounded-2xl focus-within:border-green-500/50 focus-within:bg-white/10 transition-all duration-300 group">
+              <div class="bg-white/5 border border-white/10 flex items-center px-5 h-[56px] rounded-full focus-within:border-green-500/50 focus-within:bg-white/10 transition-all duration-300 group">
                 <input v-model="name" type="text" placeholder="Name" 
                   class="w-full outline-none text-sm placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
               </div>
 
                <!-- Contact Input -->
-              <div class="bg-white/5 border border-white/10 flex items-center px-5 h-[56px] rounded-2xl focus-within:border-green-500/50 focus-within:bg-white/10 transition-all duration-300 group">
+              <div class="bg-white/5 border border-white/10 flex items-center px-5 h-[56px] rounded-full focus-within:border-green-500/50 focus-within:bg-white/10 transition-all duration-300 group">
                 <input v-model="mobileNumber" type="tel" placeholder="Contact Number" 
                   class="w-full outline-none text-sm placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
               </div>
 
               <!-- Call Now Button -->
               <button type="submit" :disabled="loading"
-                class="w-full bg-[#4b8445] hover:bg-[#3d6e38] hover:shadow-green-900/40 text-white font-bold h-[56px] rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-between pl-3 pr-6 disabled:opacity-70 group border border-green-400/20">
-                <div class="w-10 h-10 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors">
+                class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50 w-full">
+                <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors">
                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain group-hover:rotate-45 transition-transform duration-300" />
                 </div>
                 <span class="text-xl tracking-wide font-sans flex-1 text-center">Call Now</span>
@@ -106,8 +106,8 @@
               
               <!-- Name -->
               <div class="group relative">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
-                <div class="relative flex items-center px-5 h-[60px] bg-[#0B1215]/50 border border-white/10 rounded-2xl focus-within:border-green-500/50 focus-within:bg-[#0B1215]/80 transition-all duration-300">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-white/5 rounded-full blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
+                <div class="relative flex items-center px-5 h-[60px] bg-[#0B1215]/50 border border-white/10 rounded-full focus-within:border-green-500/50 focus-within:bg-[#0B1215]/80 transition-all duration-300">
                    <input v-model="name" type="text" placeholder="Name" 
                     class="w-full outline-none text-base placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
                 </div>
@@ -115,21 +115,20 @@
               
               <!-- Contact -->
                <div class="group relative">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
-                 <div class="relative flex items-center px-5 h-[60px] bg-[#0B1215]/50 border border-white/10 rounded-2xl focus-within:border-green-500/50 focus-within:bg-[#0B1215]/80 transition-all duration-300">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-white/5 rounded-full blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
+                 <div class="relative flex items-center px-5 h-[60px] bg-[#0B1215]/50 border border-white/10 rounded-full focus-within:border-green-500/50 focus-within:bg-[#0B1215]/80 transition-all duration-300">
                     <input v-model="mobileNumber" type="tel" placeholder="Contact Number" 
                       class="w-full outline-none text-base placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
                  </div>
                </div>
 
-              <!-- Action Button -->
               <div class="pt-4">
                 <button type="submit" :disabled="loading"
-                  class="w-full bg-[#4b8445] hover:bg-[#3d6e38] hover:shadow-green-900/40 text-white font-bold h-[60px] rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-between pl-4 pr-8 disabled:opacity-70 group border border-green-400/20 relative overflow-hidden">
+                  class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50 w-full relative overflow-hidden">
                   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                   
-                  <div class="w-12 h-12 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors z-10">
-                     <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-5 h-5 object-contain group-hover:rotate-45 transition-transform duration-300" />
+                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors z-10">
+                     <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain group-hover:rotate-45 transition-transform duration-300" />
                   </div>
                   <span class="text-xl tracking-wide font-sans flex-1 text-center z-10">Call Now</span>
                 </button>
