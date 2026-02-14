@@ -3,14 +3,14 @@
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
       
       <!-- Brand -->
+
       <div class="flex items-center gap-3">
-         <!-- Placeholder Logo -->
-         <div class="flex flex-col items-center">
-            <img src="/ALSA_LOGO.svg" alt="ALSA Logo" class="w-12 h-auto object-contain" />
-         </div>
-         <div class="text-left leading-tight">
-            <h1 class="text-white font-bold text-sm tracking-wide font-sans">AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE</h1>
-         </div>
+        <a href="/" class="flex items-center gap-3">
+          <img src="/ALSA_LOGO.svg" alt="Ayushmaan Life Support Ambulance" class="h-12 w-auto object-contain" />
+          <div class="text-left leading-tight">
+             <div class="text-white font-bold text-[0.65rem] tracking-wide" style="font-family: 'Copperplate', serif;">AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE®</div>
+          </div>
+        </a>
       </div>
 
       <!-- Navigation -->

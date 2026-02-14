@@ -24,7 +24,7 @@
        <a href="/" class="flex items-center gap-3 bg-black/30 px-3 py-1.5 rounded-xl backdrop-blur-sm">
           <img src="/ALSA_LOGO.svg" alt="ALSA" class="h-10 w-auto object-contain" />
           <div class="text-left leading-none">
-             <div class="text-white font-bold text-[0.55rem] tracking-wider" style="font-family: 'Copperplate', serif;">
+             <div class="text-white font-bold text-[0.55rem] tracking-wider font-sans">
                AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE®
              </div>
           </div>
