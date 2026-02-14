@@ -32,7 +32,32 @@ onMounted(async () => {
                 { name: 'description', content: post.value.summary },
                 { property: 'og:title', content: post.value.title },
                 { property: 'og:description', content: post.value.summary },
-                { property: 'og:image', content: post.value.coverImage || 'https://ayushman-ambulance.web.app/alsalogo.png' }
+                { property: 'og:image', content: post.value.coverImage || 'https://www.ayushmaanambulance.com/alsalogo.png' }
+            ],
+            script: [
+                {
+                    type: 'application/ld+json',
+                    children: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'BlogPosting',
+                        headline: post.value.title,
+                        image: post.value.coverImage || 'https://www.ayushmaanambulance.com/alsalogo.png',
+                        datePublished: post.value.publishedDate ? new Date(post.value.publishedDate.seconds * 1000).toISOString() : '',
+                        author: {
+                            '@type': 'Organization',
+                            name: 'Ayushmaan Life Support Team'
+                        },
+                        publisher: {
+                            '@type': 'Organization',
+                            name: 'Ayushmaan Life Support Ambulance',
+                            logo: {
+                                '@type': 'ImageObject',
+                                url: 'https://www.ayushmaanambulance.com/logo.png'
+                            }
+                        },
+                        description: post.value.summary
+                    })
+                }
             ]
         });
     }

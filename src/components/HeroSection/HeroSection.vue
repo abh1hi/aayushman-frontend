@@ -5,9 +5,7 @@
     <!--          MOBILE VIEW (md:hidden)           -->
     <!-- ========================================== -->
     <div class="md:hidden relative min-h-screen flex flex-col pt-24 pb-8 bg-[#0B1215]">
-      <!-- Mobile Background: Dark Map Theme -->
-      <!-- Using a dark gradient/map placeholder for now. 
-           In a real scenario, this would be a map image. -->
+      <!-- Mobile Background -->
       <div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" 
            style="background-image: url('/media/hero-page-background-image-2.jpg'); filter: grayscale(100%) contrast(1.2) brightness(0.5);">
       </div>
@@ -25,98 +23,45 @@
         </div>
 
         <!-- Form Card (Mobile) -->
-        <div class="bg-[#1A2320] border border-white/10 p-5 rounded-[2rem] w-full max-w-[340px] shadow-2xl backdrop-blur-md relative overflow-hidden animate-fade-in-up">
-            <!-- Green glow effect -->
-            <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+        <div class="bg-[#1A2320]/80 border border-white/10 p-6 rounded-[2rem] w-full max-w-[340px] shadow-2xl backdrop-blur-xl relative overflow-hidden animate-fade-in-up">
+            <!-- Green glow effect (Liquid feel) -->
+            <div class="absolute top-0 right-0 w-40 h-40 bg-green-500/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none mix-blend-screen"></div>
 
-            <h3 class="text-xl font-black mb-6 uppercase tracking-wide leading-tight text-white">
-              Get Quick Ambulance <br/>
-              <span class="text-white">Cost Instantly...</span>
+            <h3 class="text-xl font-bold mb-6 uppercase tracking-wider leading-tight text-white/90">
+              Response Within <br/>
+              <span class="text-white font-black">Seconds...</span>
             </h3>
 
-            <form @submit.prevent="handleEstimate" class="space-y-4">
-              <!-- Pickup -->
-              <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
-                <input v-model="pickup" type="text" placeholder="Enter Pickup Address or area" 
-                  class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
-                <span class="text-green-500 ml-2">
-                   <!-- Location Icon -->
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </span>
+            <form @submit.prevent="handleSubmit" class="space-y-5">
+              <!-- Name Input -->
+              <div class="bg-white/5 border border-white/10 flex items-center px-5 h-[56px] rounded-2xl focus-within:border-green-500/50 focus-within:bg-white/10 transition-all duration-300 group">
+                <input v-model="name" type="text" placeholder="Name" 
+                  class="w-full outline-none text-sm placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
               </div>
 
-              <!-- Destination -->
-              <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
-                <input v-model="destination" type="text" placeholder="Enter Destination" 
-                  class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
-                <span class="text-green-500 ml-2">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </span>
+               <!-- Contact Input -->
+              <div class="bg-white/5 border border-white/10 flex items-center px-5 h-[56px] rounded-2xl focus-within:border-green-500/50 focus-within:bg-white/10 transition-all duration-300 group">
+                <input v-model="mobileNumber" type="tel" placeholder="Contact Number" 
+                  class="w-full outline-none text-sm placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
               </div>
 
-               <!-- Mobile Number -->
-              <div class="bg-white/5 border border-white/10 flex items-center px-4 h-[50px] rounded-full focus-within:border-green-500/50 transition-colors">
-                <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
-                  class="w-full outline-none text-xs placeholder-gray-500 bg-transparent text-gray-200" />
-                <span class="text-green-500 ml-2">
-                   <!-- Phone Icon -->
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                   </svg>
-                </span>
-              </div>
-
-               <!-- Ambulance Type -->
-              <div class="bg-white/5 border border-white/10 px-4 h-[50px] flex items-center rounded-full relative">
-                <select v-model="ambulanceType" class="w-full outline-none text-xs bg-transparent border-none text-gray-400 appearance-none cursor-pointer">
-                    <option value="" disabled selected>Ambulance Type</option>
-                    <option v-for="type in ambulanceTypes" :key="type" :value="type" class="text-black">{{ type }}</option>
-                </select>
-                <div class="pointer-events-none absolute right-4 flex items-center text-gray-500">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              <!-- Call Now Button -->
+              <button type="submit" :disabled="loading"
+                class="w-full bg-[#4b8445] hover:bg-[#3d6e38] hover:shadow-green-900/40 text-white font-bold h-[56px] rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-between pl-3 pr-6 disabled:opacity-70 group border border-green-400/20">
+                <div class="w-10 h-10 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors">
+                   <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain group-hover:rotate-45 transition-transform duration-300" />
                 </div>
-              </div>
-
-              <!-- Buttons Row -->
-              <div class="flex gap-3 pt-2">
-                <button type="submit" :disabled="loading"
-                  class="flex-1 bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center gap-2 px-2 disabled:opacity-70 group border border-green-600/50">
-                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0">
-                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain" />
-                  </div>
-                  <span class="text-sm flex-1 text-center whitespace-nowrap">See Estimated Fare</span>
-                </button>
-                
-                <button type="button" @click="handleReset"
-                  class="w-[90px] h-[48px] rounded-full border border-gray-600 bg-transparent hover:bg-white/5 text-gray-300 font-semibold transition flex items-center justify-center gap-2">
-                  <span class="text-xs">Reset</span> 
-                  <span class="text-green-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                  </span>
-                </button>
-              </div>
-
-               <!-- Note -->
-              <p class="text-[10px] text-center text-gray-500 mt-3 leading-tight px-1">
-                <span class="text-gray-400 font-bold">Note:</span> This is an estimated fare as per your requirements. For exact pricing, Call us at <a href="tel:8802020245" class="text-blue-400">88 02 02 02 45</a>.
-              </p>
-
-               <!-- Call Us Button -->
-              <button type="button" @click="handleCall" 
-                class="w-full bg-[#C81E1E] hover:bg-[#A01818] text-white font-bold h-[48px] rounded-full shadow-lg transition-transform hover:-translate-y-0.5 flex items-center justify-center mt-2 text-sm">
-                 Call Us
+                <span class="text-xl tracking-wide font-sans flex-1 text-center">Call Now</span>
               </button>
+
             </form>
+            
+             <!-- Bottom Text inside card for liquid feel integration -->
+             <div class="mt-6 pt-4 border-t border-white/5 text-center">
+                 <p class="text-[10px] text-gray-400/80 tracking-widest uppercase">Racing Time. Delivering Care.</p>
+             </div>
         </div>
         
-        <!-- Bottom Text (Mobile) -->
-        <div class="text-center mt-auto pb-4 pt-4">
-             <h1 class="text-xl font-black tracking-[0.2em] leading-tight text-white/50">
-              RACING TIME.<br/>
-              <span class="text-white">DELIVERING CARE.</span>
-            </h1>
-        </div>
-
       </div>
     </div>
 
@@ -138,90 +83,58 @@
             </h1>
           </div>
     
-          <!-- Right Form: Get Quick Ambulance Cost -->
-          <div class="glass-card p-5 md:p-6 rounded-[2rem] w-full max-w-[360px] mx-auto relative animate-fade-in-up">
+          <!-- Right Form: Quick Request -->
+          <div class="glass-card bg-[#1A2320]/60 p-8 rounded-[2.5rem] w-full max-w-[400px] mx-auto relative animate-fade-in-up backdrop-blur-xl border border-white/10 shadow-2xl">
             <!-- 24/7 Badge -->
-            <div class="absolute -top-4 left-8 bg-white text-gray-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2 shadow-lg">
-               <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+            <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#0B1215] border border-white/10 text-gray-200 text-xs font-bold px-4 py-2 rounded-full flex items-center gap-2 shadow-xl z-20">
+               <span class="relative flex h-2 w-2">
+                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                 <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+               </span>
                24/7 Available
             </div>
-    
-            <h3 class="text-xl md:text-2xl font-black mb-5 uppercase tracking-wide leading-tight mt-2">
-              Get Quick Ambulance <br/>
-              <span class="text-gray-300">Cost Instantly...</span>
+             
+            <!-- Liquid Glow -->
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-green-500/20 rounded-full blur-3xl pointer-events-none mix-blend-screen opacity-60"></div>
+
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider leading-tight text-white/90 text-center mt-2">
+              Response Within <br/>
+              <span class="text-white font-black">Seconds...</span>
             </h3>
             
-            <form @submit.prevent="handleEstimate" class="space-y-3">
+            <form @submit.prevent="handleSubmit" class="space-y-5 px-2">
               
-              <!-- Pickup -->
-              <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
-                <input v-model="pickup" type="text" placeholder="Enter Pickup Address or area" 
-                  class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
-                <span class="text-green-500 cursor-pointer">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </span>
-              </div>
-              
-              <!-- Destination -->
-              <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
-                <input v-model="destination" type="text" placeholder="Enter Destination" 
-                  class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
-                <span class="text-green-500 cursor-pointer">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </span>
-              </div>
-    
-              <!-- Mobile Number -->
-              <div class="input-pill flex items-center px-4 h-[48px] rounded-full">
-                <input v-model="mobileNumber" type="tel" placeholder="Enter Mobile Number" 
-                  class="input-field w-full outline-none text-xs placeholder-gray-400 bg-transparent py-1" />
-                <span class="text-green-500">
-                   <!-- Phone Icon -->
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                   </svg>
-                </span>
-              </div>
-    
-              <!-- Ambulance Type -->
-              <div class="input-pill px-4 h-[48px] flex items-center rounded-full">
-                 <select v-model="ambulanceType" class="input-field w-full outline-none text-xs bg-transparent custom-select cursor-pointer text-gray-300">
-                    <option value="" disabled selected>Ambulance Type</option>
-                    <option v-for="type in ambulanceTypes" :key="type" :value="type" class="text-black">{{ type }}</option>
-                 </select>
+              <!-- Name -->
+              <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
+                <div class="relative flex items-center px-5 h-[60px] bg-[#0B1215]/50 border border-white/10 rounded-2xl focus-within:border-green-500/50 focus-within:bg-[#0B1215]/80 transition-all duration-300">
+                   <input v-model="name" type="text" placeholder="Name" 
+                    class="w-full outline-none text-base placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
+                </div>
               </div>
               
-              <!-- Action Buttons -->
-              <div class="flex gap-2 pt-2">
+              <!-- Contact -->
+               <div class="group relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur opacity-0 group-focus-within:opacity-100 transition duration-500"></div>
+                 <div class="relative flex items-center px-5 h-[60px] bg-[#0B1215]/50 border border-white/10 rounded-2xl focus-within:border-green-500/50 focus-within:bg-[#0B1215]/80 transition-all duration-300">
+                    <input v-model="mobileNumber" type="tel" placeholder="Contact Number" 
+                      class="w-full outline-none text-base placeholder-gray-500 bg-transparent text-gray-100 group-hover:placeholder-gray-400 transition-colors" />
+                 </div>
+               </div>
+
+              <!-- Action Button -->
+              <div class="pt-4">
                 <button type="submit" :disabled="loading"
-                  class="w-[65%] btn-green text-white font-bold h-[48px] pr-2 pl-2 rounded-full shadow-lg transition flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed border border-green-600/50">
-                  <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0">
-                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain" />
+                  class="w-full bg-[#4b8445] hover:bg-[#3d6e38] hover:shadow-green-900/40 text-white font-bold h-[60px] rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-between pl-4 pr-8 disabled:opacity-70 group border border-green-400/20 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  
+                  <div class="w-12 h-12 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors z-10">
+                     <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-5 h-5 object-contain group-hover:rotate-45 transition-transform duration-300" />
                   </div>
-                  <span class="whitespace-nowrap text-sm flex-1 text-center">See Estimated Fare</span>
-                </button>
-                
-                <button type="button" @click="handleReset"
-                  class="flex-1 h-[48px] rounded-full border border-gray-600 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 font-semibold transition flex items-center justify-center gap-2 px-2">
-                  <span class="text-sm">Reset</span>
-                  <span class="text-green-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                  </span>
+                  <span class="text-xl tracking-wide font-sans flex-1 text-center z-10">Call Now</span>
                 </button>
               </div>
-    
-              <!-- Note -->
-              <p class="text-[12px] text-gray-400 leading-relaxed mt-1">
-                <strong class="text-gray-300">Note:</strong> This is an estimated fare as per your requirements. For exact pricing, Call us at <a href="tel:8802020245" class="text-blue-400 hover:underline">88 02 02 02 45</a>.
-              </p>
-    
-              <!-- Call Us Button -->
-              <div class="pt-1 flex justify-start">
-                 <button type="button" @click="handleCall" class="bg-[#C81E1E] hover:bg-[#A01818] text-white font-bold px-6 h-[48px] rounded-full shadow-lg transition-transform hover:-translate-y-1 flex items-center justify-center text-sm">
-                   Call Us
-                 </button>
-              </div>
-    
+
             </form>
           </div>
         </div>

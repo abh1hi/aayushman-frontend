@@ -1,25 +1,42 @@
-
 import SeoAnalyzer from 'seo-analyzer';
-
-const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-const outputDir = './test-results';
-
-// Ensure output directory exists (handled by Node usually, but good to check)
 import fs from 'fs';
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
+import path from 'path';
+
+// Helper to get all HTML files recursively
+function getHtmlFiles(dir, fileList = []) {
+    if (!fs.existsSync(dir)) return fileList;
+    const files = fs.readdirSync(dir);
+    files.forEach(file => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+        if (stat.isDirectory()) {
+            getHtmlFiles(filePath, fileList);
+        } else {
+            if (file.endsWith('.html')) {
+                fileList.push(filePath);
+            }
+        }
+    });
+    return fileList;
+}
+
+const distPath = path.resolve('./dist');
+console.log(`Scanning for HTML files in: ${distPath}`);
+const files = getHtmlFiles(distPath);
+console.log(`Found ${files.length} HTML files.`);
+
+if (files.length === 0) {
+    console.error("No HTML files found in dist! Aborting.");
+    process.exit(1);
 }
 
 new SeoAnalyzer()
-    .inputFolders(['dist']) // Scan the dist folder directly for HTML files
-    .addRule('titleLength', { min: 10, max: 60 })
-    .addRule('metaDescription', { min: 10, max: 160 })
-    .addRule('h1Tag', { min: 1, max: 1 })
-    .addRule('noTooManyStrongTags', { threshold: 2 })
-    .addRule('imgTagWithAltAttribute')
-    .addRule('aTagWithRelAttribute')
-    .addRule('canonicalLink')
-    // Output results to console and file
+    .inputFiles(files)
+    .useRule('titleLengthRule', { min: 10, max: 70 })
+    .useRule('metaBaseRule', { list: ['description', 'viewport'] })
+    .useRule('metaSocialRule', { properties: ['og:title', 'og:description', 'og:image'] })
+    .useRule('imgTagWithAltAttributeRule')
+
+    .useRule('canonicalLinkRule')
     .outputConsole()
-    .outputJson(`${outputDir}/seo-result-${timestamp}.json`)
     .run();

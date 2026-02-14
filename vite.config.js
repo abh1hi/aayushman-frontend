@@ -42,9 +42,8 @@ const fetchBlogRoutes = async () => {
 export default defineConfig({
   plugins: [
     vue(),
-    /*
     Sitemap({
-      hostname: 'https://ayushman-ambulance.web.app',
+      hostname: 'https://www.ayushmaanambulance.com/',
       dynamicRoutes: [
         '/services/air-ambulance-india',
         '/services/rail-ambulance',
@@ -53,7 +52,6 @@ export default defineConfig({
         '/services/event-medical-support'
       ]
     })
-    */
   ],
   ssgOptions: {
     includedRoutes: async (paths, routes) => {

@@ -62,41 +62,64 @@ export default {
 
 
         // --- SCROLL HANDLING ---
-        const handleScroll = () => {
-            if (!sectionRef.value) return
+        let ticking = false
+
+        const updateProgress = () => {
+            if (!sectionRef.value) {
+                ticking = false
+                return
+            }
 
             const rect = sectionRef.value.getBoundingClientRect()
             const winH = window.innerHeight
-
-            // Scroll Logic for Timeline
-            // Determine how far the section has travelled through the viewport
-            // 0 = section top just enters viewport bottom
-            // 1 = section bottom just leaves viewport top? Or section center passes middle?
-            // Let's refine for a nice reveal:
-
             const totalTravel = winH + rect.height
             const currentPos = winH - rect.top
 
             // Normalize: 0 to 1
             let p = currentPos / totalTravel
 
-            // Adjust range to make the animation span a bit wider or centered better
-            // e.g., multiply by 1.5 and offset to start earlier/later
+            // Adjust range
             p = p * 1.5 - 0.2
-
             p = Math.max(0, Math.min(1, p))
 
             progress.value = p
+            ticking = false
         }
 
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateProgress)
+                ticking = true
+            }
+        }
+
+        let observer = null
+
         onMounted(() => {
-            window.addEventListener('scroll', handleScroll, { passive: true })
-            // Initial call to set state
-            handleScroll()
+            // Initial call
+            updateProgress()
+
+            // Intersection Observer to only listen to scroll when visible
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        window.addEventListener('scroll', handleScroll, { passive: true })
+                        // Also update once on entry to ensure correct state
+                        updateProgress()
+                    } else {
+                        window.removeEventListener('scroll', handleScroll)
+                    }
+                })
+            }, { threshold: 0 })
+
+            if (sectionRef.value) {
+                observer.observe(sectionRef.value)
+            }
         })
 
         onUnmounted(() => {
             window.removeEventListener('scroll', handleScroll)
+            if (observer) observer.disconnect()
         })
 
         return {

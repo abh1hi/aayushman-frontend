@@ -1,19 +1,37 @@
 <script setup>
 import Header from './components/Header/Header.vue'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { useHead } from '@vueuse/head'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
-const isScrolled = ref(false)
+const route = useRoute()
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+useHead({
+  link: [
+    {
+      rel: 'alternate',
+      hreflang: 'en-IN',
+      href: computed(() => {
+        const path = route.path.endsWith('/') ? route.path : `${route.path}/`
+        return `https://www.ayushmaanambulance.com${path}`
+      })
+    },
+    {
+      rel: 'alternate',
+      hreflang: 'x-default',
+      href: computed(() => {
+        const path = route.path.endsWith('/') ? route.path : `${route.path}/`
+        return `https://www.ayushmaanambulance.com${path}`
+      })
+    },
+    {
+      rel: 'canonical',
+      href: computed(() => {
+        const path = route.path.endsWith('/') ? route.path : `${route.path}/`
+        return `https://www.ayushmaanambulance.com${path}`
+      })
+    }
+  ]
 })
 </script>
 

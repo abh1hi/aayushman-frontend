@@ -10,6 +10,8 @@
     "firebase:serve": "firebase emulators:start",
     "firebase:deploy": "firebase deploy",
     "test:seo": "node scripts/seo-test.js",
+    "test:dom-size": "node scripts/check-dom-size.js",
+    "test:audit": "unlighthouse --site http://localhost:4173",
     "audit": "unlighthouse --site ./dist"
   },
   "dependencies": {

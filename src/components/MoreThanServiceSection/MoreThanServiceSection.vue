@@ -5,7 +5,7 @@
     <!--          MOBILE VIEW (md:hidden)           -->
     <!-- ========================================== -->
     <div class="md:hidden relative min-h-screen w-full flex flex-col pt-20 pb-12 px-8 bg-cover bg-center overflow-hidden"
-         style="background-image: url('/media/Aboutus.jpg');">
+         style="background-image: url('/media/mobile-mode-second-section.jpeg');">
          
          <!-- Dark Overlay for Readability -->
          <div class="absolute inset-0 bg-black/70 z-0"></div>

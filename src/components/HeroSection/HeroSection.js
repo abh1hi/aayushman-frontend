@@ -3,81 +3,50 @@ import { EnquiryService } from '../../services/EnquiryService'
 
 export default {
     setup() {
-        const pickup = ref('')
-        const destination = ref('')
+        const name = ref('')
         const mobileNumber = ref('')
-        const ambulanceType = ref('')
 
         const loading = ref(false)
         const errorMessage = ref('')
         const successMessage = ref('')
 
-        const ambulanceTypes = [
-            'Basic Life Support (BLS)',
-            'Advanced Life Support (ALS)',
-            'ICU Ambulance',
-            'Patient Transport',
-            'Mortuary Van'
-        ]
-
-        const getGeolocation = () => {
-            return new Promise((resolve, reject) => {
-                if (!navigator.geolocation) {
-                    reject(new Error('Geolocation not supported'));
-                } else {
-                    navigator.geolocation.getCurrentPosition(
-                        (position) => {
-                            resolve({
-                                latitude: position.coords.latitude,
-                                longitude: position.coords.longitude
-                            });
-                        },
-                        (error) => {
-                            console.warn('Geolocation failed, defaulting to 0,0', error);
-                            resolve({ latitude: 0.0, longitude: 0.0 }); // Default fallback
-                        },
-                        { timeout: 5000 }
-                    );
-                }
-            });
-        };
-
-        const handleEstimate = async () => {
+        const handleSubmit = async () => {
             loading.value = true;
             errorMessage.value = '';
             successMessage.value = '';
 
             // Basic Validation
-            if (!mobileNumber.value) {
-                errorMessage.value = 'Please enter your mobile number.';
+            if (!name.value) {
+                errorMessage.value = 'Please enter your name.';
                 loading.value = false;
-                alert('Please enter your mobile number.');
+                alert('Please enter your name.');
+                return;
+            }
+            if (!mobileNumber.value) {
+                errorMessage.value = 'Please enter your contact number.';
+                loading.value = false;
+                alert('Please enter your contact number.');
                 return;
             }
 
             try {
-                // Get Location
-                const location = await getGeolocation();
-
                 // Construct Payload
                 const enquiryData = {
-                    callerId: mobileNumber.value.startsWith('+') ? mobileNumber.value : `+91${mobileNumber.value}`, // Basic formatting
-                    location: {
-                        latitude: location.latitude,
-                        longitude: location.longitude,
-                        address: `Pickup: ${pickup.value}, Drop: ${destination.value}, Type: ${ambulanceType.value}`
-                    }
+                    name: name.value,
+                    contact: mobileNumber.value.startsWith('+') ? mobileNumber.value : `+91${mobileNumber.value}`, // Basic formatting
+                    type: 'Quick Call Request',
+                    source: 'Hero Section'
                 };
 
                 // Call Service
                 await EnquiryService.submitEnquiry(enquiryData);
 
-                successMessage.value = 'Enquiry submitted successfully! We will call you shortly.';
-                alert('Enquiry submitted successfully! We will call you shortly.');
+                successMessage.value = 'Request submitted! We will call you within seconds.';
+                alert('Request submitted! We will call you within seconds.');
                 handleReset();
 
             } catch (error) {
-                errorMessage.value = error.message || 'Failed to submit enquiry.';
+                errorMessage.value = error.message || 'Failed to submit request.';
                 alert(`Error: ${errorMessage.value}`);
             } finally {
                 loading.value = false;
@@ -85,10 +54,8 @@ export default {
         }
 
         const handleReset = () => {
-            pickup.value = ''
-            destination.value = ''
+            name.value = ''
             mobileNumber.value = ''
-            ambulanceType.value = ''
             errorMessage.value = ''
             successMessage.value = ''
         }
@@ -98,12 +65,9 @@ export default {
         }
 
         return {
-            pickup,
-            destination,
+            name,
             mobileNumber,
-            ambulanceType,
-            ambulanceTypes,
-            handleEstimate,
+            handleSubmit,
             handleReset,
             handleCall,
             loading

@@ -9,8 +9,8 @@ const route = useRoute()
 // contentMap stores the specific data for each route path
 const contentMap = {
   '/services/air-ambulance-india': {
-    title: 'Air Ambulance Services India | International Medical Flights',
-    metaDesc: 'Best Air Ambulance Service in India. Low cost medical flights, ICU aircraft, and rapid international patient transfer to Nepal, Dubai, and USA.',
+    title: 'Air Ambulance Service India | ICU Flights',
+    metaDesc: 'Best Air Ambulance India. Low cost ICU medical flights & rapid patient transfer to Nepal, Dubai, and USA.',
     heading: 'Advanced Air Ambulance Services in India',
     subHeading: 'Rapid. Reliable. ICU on Wings.',
     description: 'When time is critical, our Air Ambulance services provide the fastest medical response. Equipped with state-of-the-art ICU setups and specialized medical teams, we ensure seamless bedside-to-bedside transfers across India and internationally.',
@@ -18,8 +18,8 @@ const contentMap = {
     bgImage: '/morethanservice.webp' // Reusing existing asset or placeholder
   },
   '/services/rail-ambulance': {
-    title: 'Rail Ambulance Services | Cost-Effective Medical Transport',
-    metaDesc: 'Affordable Rail Ambulance services in India. AC train medical transport with ICU setup, doctor, and paramedic monitoring for long-distance travel.',
+    title: 'Rail Ambulance Service | Cost-Effective Transport',
+    metaDesc: 'Affordable Rail Ambulance India. AC train medical transport with ICU setup, doctor & paramedic for long-distance travel.',
     heading: 'Economical Rail Ambulance Solutions',
     subHeading: 'Safe Long-Distance Transport.',
     description: 'Our Rail Ambulance service transforms AC train compartments into mobile ICUs. It is the most cost-effective solution for stable patients requiring long-distance transport with continuous medical monitoring.',
@@ -27,8 +27,8 @@ const contentMap = {
     bgImage: '/morethanservice.webp'
   },
   '/services/road-ambulance': {
-    title: 'Road Ambulance Service | ACLS, BLS & ICU Ambulance',
-    metaDesc: '24/7 Road Ambulance service near you. ICU, Ventilator, and Oxygen ambulances for local and outstation patient transport. Rapid response guarantee.',
+    title: 'Road Ambulance Service | 24/7 ICU Ambulance',
+    metaDesc: '24/7 Road Ambulance near you. ICU, Ventilator & Oxygen ambulances for local/outstation transfer. Rapid response guaranteed.',
     heading: '24/7 Advanced Road Ambulance Network',
     subHeading: 'Every Minute Counts.',
     description: 'From Basic Life Support (BLS) to Advanced Life Support (ALS) ICU ambulances, our fleet is ready 24/7. We act as mobile hospitals, stabilizing patients during critical transit to the nearest hospital.',
@@ -36,8 +36,8 @@ const contentMap = {
     bgImage: '/morethanservice.webp'
   },
   '/locations/ambulance-service-gurgaon-delhi-ncr': {
-    title: 'Ambulance Service Gurgaon & Delhi NCR | Near Medanta Hospital',
-    metaDesc: 'Top-rated Ambulance service in Gurgaon and Delhi NCR. Nearest ambulance to Medanta Hospital. ICU, Cardiac, and Emergency ambulances 24/7.',
+    title: 'Ambulance Service Gurgaon & Delhi NCR | 24/7',
+    metaDesc: 'Top-rated Ambulance in Gurgaon & Delhi NCR. Near Medanta Hospital. 24/7 ICU, Cardiac & Emergency ambulances.',
     heading: 'Emergency Ambulance Service in Gurgaon & Delhi NCR',
     subHeading: 'Trusted Local Response.',
     description: 'Strategically positioned in Gurgaon near Medanta Medicity, Fortis, and Max hospitals. We provide the fastest emergency response time in Delhi NCR for cardiac arrests, accidents, and critical care transfers.',
@@ -45,8 +45,8 @@ const contentMap = {
     bgImage: '/morethanservice.webp'
   },
   '/services/event-medical-support': {
-    title: 'Event Medical Support & Ambulance Standby Services',
-    metaDesc: 'Professional medical support for corporate events, marathons, weddings, and sports in Delhi NCR. On-site ambulance and doctor standby.',
+    title: 'Event Medical Support | Ambulance Standby',
+    metaDesc: 'Medical support for events, weddings & sports in Delhi NCR. On-site doctor & ambulance standby for guest safety.',
     heading: 'Event Medical Support & Standby',
     subHeading: 'Safety for Your Guests.',
     description: 'Ensure the safety of your attendees with our on-site medical standby services. From corporate meets to large-scale sports events, our unparalleled medical coverage gives you peace of mind.',
@@ -72,7 +72,7 @@ useHead({
     { name: 'description', content: computed(() => content.value.metaDesc) },
     { property: 'og:title', content: computed(() => content.value.title) },
     { property: 'og:description', content: computed(() => content.value.metaDesc) },
-    { property: 'og:image', content: 'https://ayushman-ambulance.web.app/alsalogo.png' }
+    { property: 'og:image', content: 'https://www.ayushmaanambulance.com/alsalogo.png' }
   ],
   script: [
     {
@@ -85,13 +85,20 @@ useHead({
         provider: {
           '@type': 'MedicalOrganization',
           name: 'Ayushmaan Life Support Ambulance',
-          url: 'https://ayushman-ambulance.web.app',
-          logo: 'https://ayushman-ambulance.web.app/logo.png' 
+          url: 'https://www.ayushmaanambulance.com',
+          logo: 'https://www.ayushmaanambulance.com/logo.png',
+          image: 'https://www.ayushmaanambulance.com/alsalogo.png',
+          priceRange: '₹₹'
         },
         serviceType: content.value.title,
         areaServed: {
           '@type': 'Country',
           name: 'India'
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '124'
         },
         offers: content.value.features.map(feature => ({
           '@type': 'Offer',
