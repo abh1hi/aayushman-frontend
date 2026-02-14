@@ -1,5 +1,5 @@
 <template>
-  <div class="training-card w-full flex flex-col md:flex-row min-h-[500px]">
+  <div class="training-card w-full flex flex-col md:flex-row h-full">
     
     <!-- Text Content -->
     <div class="flex-1 p-8 md:p-16 flex flex-col justify-center"
