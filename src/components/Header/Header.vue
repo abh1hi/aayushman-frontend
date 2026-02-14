@@ -22,9 +22,9 @@
 
        <!-- Right: Logo -->
        <a href="/" class="flex items-center gap-3 bg-black/30 px-3 py-1.5 rounded-xl backdrop-blur-sm">
-          <img src="/ALSA_LOGO.svg" alt="ALSA" class="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]" />
+          <img src="/ALSA_LOGO.svg" alt="ALSA" class="h-10 w-auto object-contain" />
           <div class="text-left leading-none">
-             <div class="text-white font-bold text-[0.55rem] tracking-wider font-sans">
+             <div class="text-white font-bold text-[0.55rem] tracking-wider" style="font-family: 'Copperplate', serif;">
                AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE®
              </div>
           </div>
@@ -39,7 +39,7 @@
         <a href="/" class="flex items-center gap-3">
           <img src="/ALSA_LOGO.svg" alt="Ayushmaan Life Support Ambulance" class="h-12 w-auto object-contain" />
           <div class="text-left leading-tight hidden md:block">
-             <div class="text-white font-bold text-[0.65rem] tracking-wide font-sans">AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE®</div>
+             <div class="text-white font-bold text-[0.65rem] tracking-wide" style="font-family: 'Copperplate', serif;">AYUSHMAAN<br/>LIFE SUPPORT<br/>AMBULANCE®</div>
           </div>
         </a>
       </div>

@@ -6,7 +6,7 @@
 
     <div class="container mx-auto px-4 relative z-10 h-full flex items-center">
       <div class="max-w-xl">
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 uppercase leading-tight tracking-wide">
+        <h2 class="font-bold text-white mb-6 uppercase leading-tight tracking-wide" style="font-size: 28px;">
           Powering Emergency <br/> Response With <br/> <span class="text-white">5G Connectivity</span>
         </h2>
         <p class="text-gray-300 text-base md:text-lg mb-10 leading-relaxed max-w-lg">

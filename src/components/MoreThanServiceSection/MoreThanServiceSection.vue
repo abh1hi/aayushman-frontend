@@ -22,7 +22,7 @@
                </div>
 
                <!-- Title -->
-               <h2 class="text-lg font-black text-white uppercase leading-tight">
+               <h2 class="font-black text-white uppercase leading-tight" style="font-size: 28px;">
                  MORE THAN A <br/>
                  SERVICE PROVIDER
                </h2>
@@ -90,7 +90,7 @@
           <div class="w-full md:w-1/2 space-y-8 pl-0 md:pl-12" :class="{ 'animate-slide-up': isVisible }">
             
             <div>
-              <h2 class="text-2xl md:text-3xl font-bold text-gray-200 tracking-[0.2em] uppercase mb-4">
+              <h2 class="font-bold text-gray-200 tracking-[0.2em] uppercase mb-4" style="font-size: 28px;">
                 More Than a Service Provider
               </h2>
               <p class="text-gray-400 leading-relaxed text-sm md:text-base">

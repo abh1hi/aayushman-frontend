@@ -10,7 +10,7 @@
           <div class="inline-block px-3 py-1 bg-red-900/30 border border-red-800 rounded-full text-red-500 text-xs font-bold uppercase tracking-wider">
             Who We Are
           </div>
-          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+          <h2 class="font-bold leading-tight" style="font-size: 28px;">
             Saving Lives with <br/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Speed & Compassion</span>
           </h2>

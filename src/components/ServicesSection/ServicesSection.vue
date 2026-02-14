@@ -2,7 +2,7 @@
   <section class="services-section py-20 text-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold mb-4">Our <span class="text-red-600">Services</span></h2>
+        <h2 class="font-bold mb-4" style="font-size: 28px;">Our <span class="text-red-600">Services</span></h2>
         <div class="w-24 h-1 bg-red-600 mx-auto rounded"></div>
         <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
           We provide a comprehensive range of medical transport services designed to meet every critical need.

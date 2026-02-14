@@ -4,7 +4,7 @@
       
       <!-- Logo & About -->
       <div>
-        <h2 class="text-2xl font-bold text-white mb-4">AYUSHMAAN <span class="text-red-600">AMBULANCE</span></h2>
+        <h2 class="font-bold text-white mb-4" style="font-size: 28px;">AYUSHMAAN <span class="text-red-600">AMBULANCE</span></h2>
         <p class="text-sm text-gray-400 mb-6">
           Providing world-class emergency medical services with a fleet of advanced ambulances and trained professionals.
         </p>

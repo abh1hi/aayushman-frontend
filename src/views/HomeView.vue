@@ -7,6 +7,7 @@ import OurServicesSection from '../components/OurServicesSection/OurServicesSect
 import FacilitiesSection from '../components/FacilitiesSection/FacilitiesSection.vue'
 import TestimonialSection from '../components/TestimonialSection/TestimonialSection.vue'
 import AlsaNetworkSection from '../components/AlsaNetworkSection/AlsaNetworkSection.vue'
+import AirAmbulanceSection from '../components/AirAmbulanceSection/AirAmbulanceSection.vue'
 import EventSupportSection from '../components/EventSupportSection/EventSupportSection.vue'
 import StatsSection from '../components/StatsSection/StatsSection.vue'
 import TrainingSection from '../components/TrainingSection/TrainingSection.vue'
@@ -124,6 +125,7 @@ useHead({
     <FacilitiesSection />
     <TestimonialSection />
     <AlsaNetworkSection />
+    <AirAmbulanceSection />
     <EventSupportSection />
     <StatsSection />
     <TrainingSection />

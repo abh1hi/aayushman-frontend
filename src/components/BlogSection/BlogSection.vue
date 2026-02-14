@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4">
       
       <!-- Heading -->
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-16 text-center">LATEST NEWS</h2>
+      <h2 class="font-bold text-white mb-16 text-center" style="font-size: 28px;">LATEST NEWS</h2>
 
       <!-- Scroll/Grid Layout -->
       <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0 scrollbar-hide">

@@ -3,26 +3,39 @@
 }
 
 .faq-container {
-    /* Subtle background instead of heavy glass card */
     background: transparent;
     overflow: hidden;
     position: relative;
 }
 
-/* Accordion Item Container */
+/* Pill-shaped Liquid Accordion Item */
 .faq-item {
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.faq-item:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+.faq-item:hover {
+    background: linear-gradient(135deg,
+            rgba(75, 132, 69, 0.1) 0%,
+            rgba(75, 132, 69, 0.05) 100%);
+    border-color: rgba(74, 222, 128, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(74, 222, 128, 0.1);
 }
 
 .faq-item.is-active {
-    /* No heavy card style change */
-    background: transparent;
+    background: linear-gradient(135deg,
+            rgba(75, 132, 69, 0.15) 0%,
+            rgba(75, 132, 69, 0.08) 100%);
+    border-color: rgba(74, 222, 128, 0.3);
+    box-shadow: 0 8px 32px rgba(74, 222, 128, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .faq-question {
@@ -30,6 +43,10 @@
 }
 
 .faq-item:hover .faq-question {
+    color: #4ade80;
+}
+
+.faq-item.is-active .faq-question {
     color: #4ade80;
 }
 
@@ -47,13 +64,12 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .faq-item.is-active .faq-answer-wrapper {
     max-height: 500px;
     opacity: 1;
-    margin-top: 0.5rem;
-    padding-bottom: 1rem;
-    /* Add padding for content */
+    margin-top: 0.75rem;
+    padding-bottom: 0.5rem;
 }

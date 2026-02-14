@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-us-section py-24">
+  <section class="contact-us-section py-24 font-sans">
     <div class="container mx-auto px-4 flex flex-col lg:flex-row gap-16 items-start lg:items-center">
       
       <!-- Left: Contact Details -->
@@ -7,7 +7,7 @@
          
          <div class="mb-12">
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Official Address</h3>
-            <p class="text-lg leading-relaxed text-gray-200">
+            <p class="text-base md:text-lg leading-relaxed text-gray-200">
                 Plot No. 1114<br />
                 Sector 38, Near Medanta, The Medicity<br />
                 Gurugram, Haryana 122001
@@ -17,7 +17,7 @@
          <div class="mb-12">
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Call Us</h3>
             <div class="space-y-2">
-                <p class="text-lg">
+                <p class="text-base md:text-lg">
                     <span class="text-gray-400 w-32 inline-block">Emergency:</span> 
                     <span class="font-bold tracking-wide">+91 88 02 02 02 45</span>
                 </p>
@@ -30,7 +30,7 @@
 
          <div>
             <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4">Email</h3>
-            <p class="text-lg text-gray-200">
+            <p class="text-base md:text-lg text-gray-200">
                 alsagurgaon@gmail.com
             </p>
          </div>
@@ -40,7 +40,7 @@
       <!-- Right: Form Card -->
       <div class="lg:w-1/2 w-full">
          <div class="form-card p-8 md:p-12">
-            <h3 class="text-xl text-white mb-2">Have a question or need assistance?</h3>
+            <h3 class="text-lg text-white mb-2">Have a question or need assistance?</h3>
             <p class="text-gray-400 text-sm mb-8">Share your details below and we'll respond at the earliest.</p>
             
             <form @submit.prevent="submitForm" class="space-y-6">

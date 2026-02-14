@@ -51,14 +51,14 @@
                 <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors">
                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain group-hover:rotate-45 transition-transform duration-300" />
                 </div>
-                <span class="text-xl tracking-wide font-sans flex-1 text-center">Call Now</span>
+                <span class="tracking-wide font-sans flex-1 text-center" style="font-size: 22px;">Call Now</span>
               </button>
 
             </form>
             
              <!-- Bottom Text inside card for liquid feel integration -->
              <div class="mt-6 pt-4 border-t border-white/5 text-center">
-                 <p class="text-[10px] text-gray-400/80 tracking-widest uppercase">Racing Time. Delivering Care.</p>
+                 <p class="text-gray-400/80 tracking-widest uppercase" style="font-size: 14px;">Racing Time. Delivering Care.</p>
              </div>
         </div>
         

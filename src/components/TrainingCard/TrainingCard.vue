@@ -4,10 +4,10 @@
     <!-- Text Content -->
     <div class="flex-1 p-8 md:p-16 flex flex-col justify-center"
          :class="layout === 'text-right' ? 'md:order-2' : 'md:order-1'">
-      <h3 class="text-lg md:text-xl font-bold text-white mb-6 leading-tight uppercase tracking-wide">
+      <h3 class="text-lg md:text-4xl font-bold text-white mb-6 leading-tight uppercase tracking-wide">
         {{ title }}
       </h3>
-      <p class="text-gray-300 text-xs md:text-sm leading-relaxed mb-10 max-w-xl">
+      <p class="text-gray-300 text-xs md:text-lg leading-relaxed mb-10 max-w-xl">
         {{ description }}
       </p>
       <button class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50">
