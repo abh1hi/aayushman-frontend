@@ -6,7 +6,7 @@
          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
     <!-- Dark Overlay for better text readability -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-transparent"></div>
 
     <!-- Content Overlay (Top Positioned) -->
     <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-start text-left">

@@ -47,7 +47,7 @@
 
               <!-- Call Now Button -->
               <button type="submit" :disabled="loading"
-                class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50 w-full">
+                class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50 w-auto">
                 <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors">
                    <img src="/info_section_icon_png/Arrow-1.svg" alt="Arrow" class="w-4 h-4 object-contain group-hover:rotate-45 transition-transform duration-300" />
                 </div>
@@ -124,7 +124,7 @@
 
               <div class="pt-4">
                 <button type="submit" :disabled="loading"
-                  class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50 w-full relative overflow-hidden">
+                  class="bg-[#4b8445] hover:brightness-110 text-white font-bold h-[48px] rounded-full shadow-lg transition flex items-center justify-between px-2 group min-w-[200px] border border-green-600/50 w-auto relative overflow-hidden">
                   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                   
                   <div class="w-8 h-8 rounded-full bg-[#1a3125] flex items-center justify-center shrink-0 group-hover:bg-[#234232] transition-colors z-10">
