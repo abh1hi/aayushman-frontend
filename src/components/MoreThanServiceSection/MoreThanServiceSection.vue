@@ -4,8 +4,8 @@
     <!-- ========================================== -->
     <!--          MOBILE VIEW (md:hidden)           -->
     <!-- ========================================== -->
-    <div class="md:hidden w-full grid grid-cols-1 place-items-start relative">
-         <img src="/media/mobile-mode-second-section.jpeg" class="col-start-1 row-start-1 w-full h-full object-cover min-h-[100%]" alt="Background" />
+    <div class="md:hidden w-full grid grid-cols-1 place-items-start relative bg-black">
+         <img src="/media/mobile-mode-second-section.jpeg" class="col-start-1 row-start-1 w-full h-full object-contain object-top min-h-[100%]" alt="Background" />
          
          <!-- Gradient Overlay -->
          <div class="col-start-1 row-start-1 w-full h-full z-0 pointer-events-none bg-gradient-to-t from-[#021000] to-transparent"></div>
@@ -80,6 +80,9 @@
     <!--          DESKTOP VIEW (hidden md:flex)     -->
     <!-- ========================================== -->
     <section class="hidden md:flex mts-section min-h-[80vh] items-center py-20 relative overflow-hidden text-left" style="background-image: url('/media/Aboutus.jpg');">
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 z-0 pointer-events-none bg-gradient-to-r from-[0200000] to-[#021000]"></div>
         
         <div class="container mx-auto px-4 relative z-10 flex justify-end">
           
